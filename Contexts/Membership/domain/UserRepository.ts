@@ -1,4 +1,4 @@
-import { User } from "./user.ts";
+import { User } from "./User.ts";
 import { UserId } from "./value-object/UserId.ts";
 import {Nullable} from "../../Shared/domain/Nullable.ts";
 import {Service} from "../../../dependencies/deps.ts";

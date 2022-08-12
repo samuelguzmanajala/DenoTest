@@ -1,5 +1,5 @@
 import {MongoRepository} from "../../Shared/infrastructure/persistence/mongo/MongoRepository.ts";
-import {User} from "../domain/user.ts";
+import {User} from "../domain/User.ts";
 import {UserRepository} from "../domain/UserRepository.ts";
 import {UserId} from "../domain/value-object/UserId.ts";
 import {Nullable} from "../../Shared/domain/Nullable.ts";

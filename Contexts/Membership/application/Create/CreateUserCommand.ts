@@ -1,4 +1,4 @@
-import { Command } from 'Contexts/Shared/domain/Command.ts';
+import {Command} from "../../../Shared/domain/Command.ts";
 
 type Params = {
     id: string;

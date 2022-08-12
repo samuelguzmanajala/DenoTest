@@ -1,11 +1,12 @@
-import {EventBus} from '../../../../Contexts/Shared/domain/eventBus.ts';
-import {UserRepository} from "Contexts/Membership/domain/UserRepository.ts";
-import {User} from "Contexts/Membership/domain/user.ts";
-import {UserName} from "Contexts/Membership/domain/value-object/UserName.ts";
-import {UserId} from "Contexts/Membership/domain/value-object/UserId.ts";
-import {UserPassword} from "Contexts/Membership/domain/value-object/UserPassword.ts";
-import {UserMail} from "Contexts/Membership/domain/value-object/UserMail.ts";
-import {Inject, Service} from "dependencies/deps.ts";
+import {UserName} from "../../domain/value-object/UserName.ts";
+import {UserRepository} from "../../domain/UserRepository.ts";
+import {UserId} from "../../domain/value-object/UserId.ts";
+import {UserMail} from "../../domain/value-object/UserMail.ts";
+import {UserPassword} from "../../domain/value-object/UserPassword.ts";
+import {EventBus} from "../../../Shared/domain/eventBus.ts";
+import {Service} from "../../../../dependencies/deps.ts";
+import {Inject} from "../../../../dependencies/deps.ts";
+import {User} from "../../domain/User.ts";
 
 type Params = {
     userId: UserId;

@@ -20,7 +20,7 @@ export class UserCreatedDomainEvent extends DomainEvent {
         password,
         mail,
         eventId,
-        occurredOn,
+        ocurredOn
     }:{
         id: string;
         name: string;
@@ -29,7 +29,7 @@ export class UserCreatedDomainEvent extends DomainEvent {
         eventId?: string;
         ocurredOn?: Date;
     }) {
-        super(UserCreatedDomainEvent.EVENT_NAME, id, eventId, occurredOn);
+        super(UserCreatedDomainEvent.EVENT_NAME, id, eventId, ocurredOn);
         this.name = name;
         this.mail = mail;
         this.password = password;

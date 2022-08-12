@@ -1,11 +1,11 @@
-import { CreateUserCommand } from 'Contexts/Membership/application/Create/CreateUserCommand.ts';
-import { CommandHandler } from 'Contexts/Shared/domain/CommandHandler.ts';
-import { UserCreator } from 'Contexts/Membership/application/Create/UserCreator.ts';
-import { Command } from 'Contexts/Shared/domain/Command.ts';
-import {UserId} from "Contexts/Membership/domain/value-object/UserId.ts";
-import {UserName} from "Contexts/Membership/domain/value-object/UserName.ts";
-import {UserPassword} from "Contexts/Membership/domain/value-object/UserPassword.ts";
-import {UserMail} from "Contexts/Membership/domain/value-object/UserMail.ts";
+import {UserName} from "../../domain/value-object/UserName.ts";
+import {UserId} from "../../domain/value-object/UserId.ts";
+import {UserMail} from "../../domain/value-object/UserMail.ts";
+import {UserPassword} from "../../domain/value-object/UserPassword.ts";
+import {CommandHandler} from "../../../Shared/domain/CommandHandler.ts";
+import {UserCreator} from "./UserCreator.ts";
+import {CreateUserCommand} from "./CreateUserCommand.ts";
+import {Command} from "../../../Shared/domain/Command.ts";
 
 export class CreateUserCommandHandler implements CommandHandler<CreateUserCommand> {
     constructor(private courseCreator: UserCreator) {}

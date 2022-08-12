@@ -1,9 +1,10 @@
+
 import {Controllers} from "./Controllers.ts";
 import {Request, Response, Context} from "../../../../dependencies/deps.ts";
-import {CreateUserCommand} from "Contexts/Membership/application/Create/CreateUserCommand.ts";
-import {CreateUserCommandHandler} from "Contexts/Membership/application/Create/CreateUserCommandHandler.ts";
 import {container} from "../dependency-injection/Container.ts";
-import {UserCreator} from "Contexts/Membership/application/Create/UserCreator.ts";
+import {UserCreator} from "../../../../Contexts/Membership/application/Create/UserCreator.ts";
+import {CreateUserCommand} from "../../../../Contexts/Membership/application/Create/CreateUserCommand.ts";
+import {CreateUserCommandHandler} from "../../../../Contexts/Membership/application/Create/CreateUserCommandHandler.ts";
 
 export class UserPutController implements Controllers{
     async run(ctx: Context){
@@ -19,7 +20,7 @@ export class UserPutController implements Controllers{
             await createUserCommandHandler.handle(createUserCommand);
             ctx.response.status = 200;
             ctx.response.body = {
-                message: "User created"
+                message: "User2 created"
             };
         } catch (error) {
             ctx.response.status = 500;

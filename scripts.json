@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "membership-back": {
+      "url": "Apps/Membership/backend/start.ts",
+      "cmd": "--watch",
+      "permissions": [
+        "allow-read",
+        "allow-write",
+        "allow-net",
+        "allow-env"
+      ]
+    }
+  }
+}

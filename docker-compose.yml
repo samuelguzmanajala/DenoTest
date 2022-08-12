@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  mongo:
+    image: 'mongo'
+    command: [--auth]
+    container_name: 'mongo-container'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: admin
+    volumes:
+      - ./mongo-init.ts:/docker-entrypoint-initdb.d/mongo-init.ts:ro
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017:27017'

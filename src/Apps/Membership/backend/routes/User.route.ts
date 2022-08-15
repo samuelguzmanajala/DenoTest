@@ -1,7 +1,9 @@
-import {Router, Request, Response} from "../../../../dependencies/deps.ts";
+import {Router, Context} from "../../../../dependencies/deps.ts";
 import {UserPutController} from "../controllers/UserPutController.ts";
-export const register = async(router: Promise<Router>) => {
-    const finalRouter = await router;
+
+export const register = function (router: Router) {
     const userPutController = new UserPutController();
-    finalRouter.put("/user/:id", (ctx) => userPutController.run(ctx));
+    router.put('/users/:id', async (ctx:Context) => {
+        await userPutController.run(ctx);
+    });
 }

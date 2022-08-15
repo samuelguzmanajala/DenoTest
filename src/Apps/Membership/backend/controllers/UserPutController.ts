@@ -1,6 +1,5 @@
 
 import {Controllers} from "./Controllers.ts";
-import {Request, Response, Context} from "../../../../dependencies/deps.ts";
 import {CreateUserCommand} from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommand.ts";
 import {
     CreateUserCommandHandler
@@ -8,11 +7,18 @@ import {
 import container from "../dependency-injection/Container.ts";
 import {UserCreator} from "../../../../Contexts/Membership/Users/application/Create/UserCreator.ts";
 
+interface UserBody {
+    name: string;
+    mail: string;
+    password: string;
+}
+
 export class UserPutController implements Controllers{
-    async run(ctx: Context){
-        const body = await ctx.request.body();
-        const user = await body.value;
-        const id: string = user.id;
+    async run(ctx): Promise<void> {
+        const body = await ctx.request.body().value;
+        const user = body as UserBody;
+        console.log('user', user);
+        const id: string = ctx.params.id;
         const name: string = user.name;
         const password: string = user.password;
         const mail: string = user.mail;

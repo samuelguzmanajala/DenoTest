@@ -6,7 +6,7 @@ WORKDIR /code
 
 USER deno
 
-COPY ./dependencies/deps.ts ./dependencies/
+COPY src/dependencies/deps.ts ./dependencies/
 
 RUN deno cache ./dependencies/deps.ts
 

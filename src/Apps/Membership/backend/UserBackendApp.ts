@@ -1,6 +1,3 @@
-import {DomainEvent} from "../../../Contexts/Shared/domain/DomainEvent.ts";
-import {DomainEventSubscriber} from "../../../Contexts/Shared/domain/DomainEventSubscriber.ts";
-import {DomainEventMapping} from "../../../Contexts/Shared/infrastructure/EventBus/DomainEventMapping.ts";
 import {EventBus} from "../../../Contexts/Shared/domain/eventBus.ts";
 import {Server} from "./server.ts";
 import container from "./dependency-injection/Container.ts";

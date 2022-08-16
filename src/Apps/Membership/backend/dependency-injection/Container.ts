@@ -11,6 +11,7 @@ import {UserCreator} from "../../../../Contexts/Membership/Users/application/Cre
 import {UserRepository} from "../../../../Contexts/Membership/Users/domain/UserRepository.ts";
 import HoustonLogger from "../../../../Contexts/Shared/infrastructure/HoustonLogger.ts";
 import Logger from "../../../../Contexts/Shared/domain/Logger.ts";
+import {UsersFinder} from "../../../../Contexts/Membership/Users/application/searchAll/UsersFinder.ts";
 
 const container = new ServiceCollection();
 container.addTransientDynamic(Types.MongoConfig, MongoConfigFactory.createConfig);
@@ -21,5 +22,6 @@ container.addTransient(EventBus, InMemoryAsyncEventBus);
 container.addTransient(UserRepository, UserMongoRepository);
 container.addTransient(Logger, HoustonLogger);
 container.addTransient(UserCreator);
+container.addTransient(UsersFinder);
 
 export default container;

@@ -26,13 +26,18 @@ export class UserMongoRepository extends MongoRepository<User> implements UserRe
         return document ? User.fromPrimitives({ ...(document as object), id: id.value }) : null;
     }
 
+    public async searchAll(): Promise<Array<User>> {
+        const collection = await this.collection();
+        const documents = await collection.find();
+        return documents.map((document: any) => User.fromPrimitives({ ...(document as object), id: document._id }));
+    }
+
     public delete(id: UserId): Promise<void> {
         console.log(id);
         return Promise.resolve(undefined);
     }
 
-    update(user: User): Promise<void> {
-        return Promise.resolve(undefined);
+    async update(user: User): Promise<void> {
     }
     protected moduleName(): string {
         return 'users';

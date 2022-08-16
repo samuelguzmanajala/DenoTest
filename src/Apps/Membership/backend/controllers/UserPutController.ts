@@ -1,4 +1,5 @@
 
+import {Context} from '../../../../dependencies/deps.ts';
 import {Controllers} from "./Controllers.ts";
 import {CreateUserCommand} from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommand.ts";
 import {
@@ -14,7 +15,7 @@ interface UserBody {
 }
 
 export class UserPutController implements Controllers{
-    async run(ctx): Promise<void> {
+    async run(ctx: any): Promise<void> {
         const body = await ctx.request.body().value;
         const user = body as UserBody;
         console.log('user', user);
@@ -28,7 +29,7 @@ export class UserPutController implements Controllers{
             await createUserCommandHandler.handle(createUserCommand);
             ctx.response.status = 200;
             ctx.response.body = {
-                message: "User2 created"
+                message: "User created"
             };
         } catch (error) {
             ctx.response.status = 500;

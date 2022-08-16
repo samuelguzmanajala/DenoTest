@@ -3,7 +3,7 @@ import {UserPutController} from "../controllers/UserPutController.ts";
 
 export const register = function (router: Router) {
     const userPutController = new UserPutController();
-    router.put('/users/:id', async (ctx:Context) => {
+    router.put('/users/:id', async (ctx) => {
         await userPutController.run(ctx);
     });
 }

@@ -17,6 +17,7 @@ export class UserGetController implements Controllers{
         const userResponse: UsersResponse = await usersHandler.handle(query);
         ctx.response.headers.set('Access-Control-Allow-Origin', '*');
         ctx.response.status = 200;
+        console.log(userResponse.users);
         ctx.response.body = this.toResponse(userResponse.users);
     }
 

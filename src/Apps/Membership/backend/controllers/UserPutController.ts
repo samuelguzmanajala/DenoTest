@@ -42,27 +42,5 @@ export class UserPutController implements Controllers{
                 message: error.message
             };
         }
-        /*
-        console.log(params);
-        const user1 = body as UserBody;
-        const id: string = ctx.params.id;
-        const name: string = user.name;
-        const password: string = user.password;
-        const mail: string = user.mail;
-        const createUserCommand = new CreateUserCommand({id, name, password, mail});
-        const createUserCommandHandler = new CreateUserCommandHandler(container.get(UserCreator));
-        try {
-            await createUserCommandHandler.handle(createUserCommand);
-            ctx.response.status = 200;
-            ctx.response.body = {
-                message: "User created"
-            };
-        } catch (error) {
-            ctx.response.status = 500;
-            ctx.response.body = {
-                message: error.message
-            };
-        }
-        */
     }
 }

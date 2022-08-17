@@ -7,7 +7,7 @@ export class UserBackendApp{
         const port = Deno.env.get("PORT") || "3000";
         this.server = new Server(port);
         await this.registerSubscribers();
-        return await this.server.listen();
+        return this.server.listen();
     }
     private async registerSubscribers() {
         const eventBus:EventBus = container.get(EventBus);

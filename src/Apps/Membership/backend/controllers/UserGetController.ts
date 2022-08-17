@@ -12,8 +12,6 @@ import {UsersResponse} from "../../../../Contexts/Membership/Users/application/U
 
 export class UserGetController implements Controllers{
     async run(ctx: any): Promise<void> {
-        const params = ctx.params;
-        console.log('params', params);
         const query = new SearchAllUsersQuery();
         const usersHandler: SearchAllUsersQueryHandler = new SearchAllUsersQueryHandler(container.get(UsersFinder));
         const userResponse: UsersResponse = await usersHandler.handle(query);

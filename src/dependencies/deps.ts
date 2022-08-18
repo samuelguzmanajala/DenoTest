@@ -1,7 +1,7 @@
 export {serve} from "https://deno.land/std@0.150.0/http/server.ts";
 export { v4 } from "https://deno.land/std@0.112.0/uuid/mod.ts";
 //OAK
-export { Application, Router, Request, Response, Context, helpers} from "https://deno.land/x/oak@v10.6.0/mod.ts";
+export { Application, Router, Request, Response, Context, helpers, Status} from "https://deno.land/x/oak@v10.6.0/mod.ts";
 export { oakCors } from "https://deno.land/x/cors@v1.2.2/mod.ts";
 
 export { config } from "https://deno.land/x/dotenv@v0.4.2/mod.ts";

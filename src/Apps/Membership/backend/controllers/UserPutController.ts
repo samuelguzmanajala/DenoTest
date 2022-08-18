@@ -7,7 +7,6 @@ import {
 import container from "../dependency-injection/Container.ts";
 import {UserCreator} from "../../../../Contexts/Membership/Users/application/Create/UserCreator.ts";
 import {Context} from '../../../../dependencies/deps.ts';
-import { ERR_CONSOLE_WRITABLE_STREAM } from 'https://deno.land/std@0.152.0/node/internal/errors.ts';
 
 type UserBody = {
     id: string;
@@ -30,17 +29,7 @@ export class UserPutController implements Controllers{
         const user: UserBody = {...(body as UserBody), id: params.id};
         const createUserCommand: CreateUserCommand = new CreateUserCommand({...user});
         const createUserCommandHandler: CreateUserCommandHandler = new CreateUserCommandHandler(container.get(UserCreator));
-        try{
-            await createUserCommandHandler.handle(createUserCommand);
-            ctx.response.status = 200;
-            ctx.response.body = {
-                message: "User created"
-            };
-        } catch (error) {
-            ctx.response.status = 500;
-            ctx.response.body = {
-                message: error.message
-            };
-        }
+        await createUserCommandHandler.handle(createUserCommand);
+        ctx.response.status = 200;
     }
 }

@@ -17,16 +17,20 @@ export class UserGetController implements Controllers{
         const userResponse: UsersResponse = await usersHandler.handle(query);
         ctx.response.headers.set('Access-Control-Allow-Origin', '*');
         ctx.response.status = 200;
-        console.log(userResponse.users);
-        ctx.response.body = this.toResponse(userResponse.users);
+        ctx.response.body = userResponse.users.map(user => ({
+            id: user.id.value,
+            name: user.name.value,
+            mail: user.mail.value,
+            password: user.password.value
+        }));
     }
-
     private toResponse(users: Array<User>) {
+        console.log('entrando');
         return users.map(user => ({
-            id: user.id,
-            name: user.name,
-            mail: user.mail,
-            password: user.password
+            id: user.id.value,
+            name: user.name.value,
+            mail: user.mail.value,
+            password: user.password.value
         }));
     }
 

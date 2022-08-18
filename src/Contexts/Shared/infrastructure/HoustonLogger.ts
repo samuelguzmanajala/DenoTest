@@ -12,7 +12,7 @@ const config: houston.Config = {
     prefix: new houston.TimePrefix(),
     logLevelDisplay: houston.LogLevelDisplay.Icon,
     logColors: {
-        [houston.LogLevel.Info]: houston.Color.Blue,
+        [houston.LogLevel.Info]: houston.Color.Green,
         [houston.LogLevel.Success]: houston.Color.Green,
         [houston.LogLevel.Warning]: houston.Color.Yellow,
         [houston.LogLevel.Error]: houston.Color.Red

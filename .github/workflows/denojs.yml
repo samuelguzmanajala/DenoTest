@@ -19,4 +19,4 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: samuelguzmanajala--eno-est # the name of the project on Deno Deploy
-          entrypoint: src/Apps/backend/start.ts # the entrypoint to deploy
+          entrypoint: Test/src/Apps/backend/start.ts # the entrypoint to deploy

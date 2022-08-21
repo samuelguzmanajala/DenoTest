@@ -2,7 +2,6 @@ import {Router} from "../../../../dependencies/deps.ts";
 import {UserPutController} from "../controllers/UserPutController.ts";
 import {UserGetController} from "../controllers/UserGetController.ts";
 import {UserDeleteController} from "../controllers/UserDeleteController.ts";
-import {StatusGetController} from "../controllers/StatusGetController.ts";
 
 export const register = function (router: Router) {
     const userPutController = new UserPutController();

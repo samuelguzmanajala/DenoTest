@@ -1,7 +1,6 @@
 import { Emitter } from '../../../../dependencies/deps.ts';
 import {DomainEvent} from "../../../../Contexts/Shared/domain/DomainEvent.ts";
 import {DomainEventSubscriber} from "../../../../Contexts/Shared/domain/DomainEventSubscriber.ts";
-import {DomainEventMapping, Mapping} from "../../../../Contexts/Shared/infrastructure/EventBus/DomainEventMapping.ts";
 
 export class EventEmitterBus extends Emitter {
     constructor(subscribers: Array<DomainEventSubscriber<DomainEvent>>) {

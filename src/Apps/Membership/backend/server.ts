@@ -1,5 +1,5 @@
 import Logger from "../../../Contexts/Shared/domain/Logger.ts";
-import {Application, Router, Status} from "../../../dependencies/deps.ts"
+import {Application, Router} from "../../../dependencies/deps.ts"
 import container from "./dependency-injection/Container.ts";
 import {registerRoutes} from "./routes/index.ts";
 import {oakCors} from "../../../dependencies/deps.ts";

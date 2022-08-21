@@ -8,11 +8,4 @@ USER deno
 
 COPY src/dependencies/deps.ts ./dependencies/
 
-RUN deno cache ./dependencies/deps.ts
-
-ADD . .
-
-RUN deno cache main.ts
-
-
 CMD ["run", "--allow-net", "main.ts"]

@@ -1,4 +1,4 @@
-import {Application, Context} from "src/dependencies/deps.ts";
+import {Application, Context} from "./src/dependencies/deps.ts";
 
 const app = new Application();
 app.use((ctx:Context) => {

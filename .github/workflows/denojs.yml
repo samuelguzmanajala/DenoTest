@@ -6,18 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        mongodb-version: [4.2]
-
     steps:
       - uses: actions/checkout@v3
       - name: Setup Deno
         uses: denoland/setup-deno@v1.1.0
-      - name: Launch MongoDB
-        uses: wbari/start-mongoDB@v0.2
-        with:
-          mongoDBVersion: ${{ matrix.mongodb-version }}
       - name: Build docker-compose
         run: docker-compose up -d
       - name: runBackend

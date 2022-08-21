@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1957811e-2657-4861-b227-5a491e7f5d3f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/routes/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/HoustonLogger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/HoustonLogger.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
       <command value="Deno: start.ts" />
     </option>
   </component>
-  <component name="RunManager" selected="Deno.Deno: start.ts">
+  <component name="RunManager" selected="Deno.Deno: index.ts">
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -94,12 +92,12 @@
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
-    <configuration name="Deno: start.ts debug" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/start.ts" programParameters="run -c tsconfig.json --allow-net --allow-env --allow-read --allow-write">
+    <configuration name="Deno: index.ts" type="DenoConfigurationType" nameIsGenerated="true" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/index.ts" programParameters="run -c tsconfig.json --allow-net --allow-env --watch --allow-read --allow-write">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Deno: start.ts" type="DenoConfigurationType" nameIsGenerated="true" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/start.ts" programParameters="run -c tsconfig.json --allow-net --allow-env --watch --allow-read --allow-write">
+    <configuration name="Deno: start.ts debug" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/start.ts" programParameters="run -c tsconfig.json --allow-net --allow-env --allow-read --allow-write">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,7 +137,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Deno.Deno: start.ts" />
+      <item itemvalue="Deno.Deno: index.ts" />
       <item itemvalue="Deno.Deno: start.ts debug" />
       <item itemvalue="Docker.docker-compose.yml.mongo: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
@@ -204,7 +202,7 @@
       <workItem from="1660916749676" duration="2631000" />
       <workItem from="1660976479867" duration="7032000" />
       <workItem from="1661064922662" duration="10429000" />
-      <workItem from="1661077116785" duration="1967000" />
+      <workItem from="1661077116785" duration="2331000" />
     </task>
     <servers />
   </component>

@@ -26,11 +26,7 @@ class HoustonLogger implements Logger {
             new houston.ConsoleTransport(
                 [houston.LogLevel.Warning, houston.LogLevel.Error, houston.LogLevel.Info, houston.LogLevel.Success],
                 config
-            ),
-            new houston.FileTransport(`logs/${Levels.WARN}`, [houston.LogLevel.Warning]),
-            new houston.FileTransport(`logs/${Levels.ERROR}`, [houston.LogLevel.Error]),
-            new houston.FileTransport(`logs/${Levels.INFO}`, [houston.LogLevel.Info]),
-            new houston.FileTransport(`logs/${Levels.INFO}`, [houston.LogLevel.Success])
+            )
         ], config);
     }
     debug(message: string): void {

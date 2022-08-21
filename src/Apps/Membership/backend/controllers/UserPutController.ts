@@ -17,7 +17,6 @@ type UserBody = {
 
 export class UserPutController implements Controller{
     async run(ctx: Context):Promise<void>{
-        console.log('UserPutController.run');
         const requestBody = ctx.request.body({
             contentTypes: {
                 json: ['application/json'],

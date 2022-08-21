@@ -12,13 +12,10 @@ jobs:
     steps:
       - name: Clone Repository
         uses: actions/checkout@v3
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1.1.0
       - name: ls
-        run: ls src
+        run: ls -a
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: samuelguzmanajala--eno-est # the name of the project on Deno Deploy
-          entrypoint: index.ts
-          cwd: dist
+          entrypoint: src/Apps/Membership/backend/index.ts # the entrypoint to deploy

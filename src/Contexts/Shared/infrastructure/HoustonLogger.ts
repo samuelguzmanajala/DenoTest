@@ -12,7 +12,7 @@ const config: houston.Config = {
     prefix: new houston.TimePrefix(),
     logLevelDisplay: houston.LogLevelDisplay.Icon,
     logColors: {
-        [houston.LogLevel.Info]: houston.Color.Green,
+        [houston.LogLevel.Info]: houston.Color.White,
         [houston.LogLevel.Success]: houston.Color.Green,
         [houston.LogLevel.Warning]: houston.Color.Yellow,
         [houston.LogLevel.Error]: houston.Color.Red
@@ -24,12 +24,13 @@ class HoustonLogger implements Logger {
     constructor() {
         this.logger = new houston.Houston([
             new houston.ConsoleTransport(
-                [houston.LogLevel.Warning, houston.LogLevel.Error, houston.LogLevel.Info],
+                [houston.LogLevel.Warning, houston.LogLevel.Error, houston.LogLevel.Info, houston.LogLevel.Success],
                 config
             ),
             new houston.FileTransport(`logs/${Levels.WARN}`, [houston.LogLevel.Warning]),
             new houston.FileTransport(`logs/${Levels.ERROR}`, [houston.LogLevel.Error]),
-            new houston.FileTransport(`logs/${Levels.INFO}`, [houston.LogLevel.Info])
+            new houston.FileTransport(`logs/${Levels.INFO}`, [houston.LogLevel.Info]),
+            new houston.FileTransport(`logs/${Levels.INFO}`, [houston.LogLevel.Success])
         ], config);
     }
     debug(message: string): void {
@@ -40,6 +41,9 @@ class HoustonLogger implements Logger {
     }
     info(message: string): void {
         this.logger.info(message);
+    }
+    success(message: string): void {
+        this.logger.success(message);
     }
 }
 

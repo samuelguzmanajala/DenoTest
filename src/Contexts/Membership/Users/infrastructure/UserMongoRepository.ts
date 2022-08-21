@@ -32,9 +32,9 @@ export class UserMongoRepository extends MongoRepository<User> implements UserRe
         return documents.map((document: any) => User.fromPrimitives({ ...(document as object), id: document._id }));
     }
 
-    public delete(id: UserId): Promise<void> {
-        console.log(id);
-        return Promise.resolve(undefined);
+    public async delete(id: UserId): Promise<void> {
+        const collection = await this.collection();
+        const document = await collection.deleteOne({ _id: id.value });
     }
 
     async update(user: User): Promise<void> {

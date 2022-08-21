@@ -12,6 +12,5 @@ export class UserBackendApp{
     private async registerSubscribers() {
         const eventBus:EventBus = container.get(EventBus);
         await eventBus.start();
-
     }
 }

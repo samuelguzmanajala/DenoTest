@@ -5,26 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1957811e-2657-4861-b227-5a491e7f5d3f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deno.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/StatusGetController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/UserDeleteController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/routes/status.route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Contexts/Membership/Users/application/Delete/DeleteUseCommandHandler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Contexts/Membership/Users/application/Delete/DeleteUserCommand.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Contexts/Membership/Users/application/Delete/UserRemover.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error/Error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/Error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info/Info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/Info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/UserBackendApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/UserBackendApp.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/Controllers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/Controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/UserGetController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/UserGetController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/UserPutController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/UserPutController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/dependency-injection/Container.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/dependency-injection/Container.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/routes/User.route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/routes/User.route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/routes/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apps/Membership/backend/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apps/Membership/backend/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Contexts/Membership/Users/infrastructure/UserMongoRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contexts/Membership/Users/infrastructure/UserMongoRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Contexts/Shared/domain/Logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contexts/Shared/domain/Logger.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/HoustonLogger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/HoustonLogger.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dependencies/deps.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dependencies/deps.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package.json" />
         <option value="JavaScript File" />
+        <option value="package.json" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -50,6 +51,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.cache/JetBrains/IntelliJIdea2022.1/javascript/deno/deno.d.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/.cache/deno/deps/https/deno.land/fe916d34ebb3e5f705e59bc8f2ba7f0498a52ee0e67d4913537a911b4813c4f1" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -68,21 +70,20 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.16.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.11.47&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/xabet/Projects/Test/src/Apps/Membership/backend/start.ts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/xabet/Projects/Test/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/xabet/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/221.5921.22/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -96,6 +97,11 @@
       <recent name="$PROJECT_DIR$/src/Contexts/Membership/Users" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="Deno: start.ts" />
+    </option>
+  </component>
   <component name="RunManager" selected="Deno.Deno: start.ts debug">
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
@@ -105,16 +111,6 @@
     </configuration>
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
-    </configuration>
-    <configuration name="Deno: container.ts  (2)" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/dependency-injection/Container.ts" programParameters="run --allow-net --watch --allow-env --allow-read --allow-write">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Deno: container.ts debug (1)" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/dependency-injection/Container.ts" programParameters="run -c tsconfig.json --allow-net --allow-env --allow-read --allow-write">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="Deno: start.ts debug" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/start.ts" programParameters="run -c tsconfig.json --allow-net --allow-env --allow-read --allow-write">
       <method v="2">
@@ -161,8 +157,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Deno.Deno: container.ts  (2)" />
-      <item itemvalue="Deno.Deno: container.ts debug (1)" />
       <item itemvalue="Deno.Deno: start.ts" />
       <item itemvalue="Deno.Deno: start.ts debug" />
       <item itemvalue="Docker.docker-compose.yml.mongo: Compose Deployment" />
@@ -224,7 +218,9 @@
       <workItem from="1660660507094" duration="10232000" />
       <workItem from="1660735233104" duration="8086000" />
       <workItem from="1660749840994" duration="2092000" />
-      <workItem from="1660842011936" duration="590000" />
+      <workItem from="1660842011936" duration="7411000" />
+      <workItem from="1660916749676" duration="2631000" />
+      <workItem from="1660976479867" duration="7032000" />
     </task>
     <servers />
   </component>
@@ -269,7 +265,6 @@
         <option value="$PROJECT_DIR$/src/Contexts/Shared/domain/Response.js" />
         <option value="$PROJECT_DIR$/src/Contexts/Shared/domain/QueryBus.js" />
         <option value="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/HoustonLogger.js" />
-        <option value="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/Controllers.js" />
         <option value="$PROJECT_DIR$/src/Apps/Membership/backend/controllers/UserPutController.js" />
         <option value="$PROJECT_DIR$/src/Contexts/Shared/domain/eventBus.js" />
         <option value="$PROJECT_DIR$/src/Contexts/Shared/domain/Logger.js" />
@@ -301,10 +296,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>vmscript://[deno:cli/main.rs:1113:31]</url>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$USER_HOME$/.cache/deno/deps/https/deno.land/18770d0e83a5e05ae4d5f873a5db82d40a4289e2ca7e62ae9f9994b598a6442b</url>
           <line>34</line>

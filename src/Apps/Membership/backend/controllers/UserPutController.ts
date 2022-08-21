@@ -1,5 +1,5 @@
 import {helpers} from '../../../../dependencies/deps.ts';
-import {Controllers} from "./Controllers.ts";
+import {Controller} from "./Controller.ts";
 import {CreateUserCommand} from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommand.ts";
 import {
     CreateUserCommandHandler
@@ -15,7 +15,7 @@ type UserBody = {
     password: string;
 }
 
-export class UserPutController implements Controllers{
+export class UserPutController implements Controller{
     async run(ctx: Context):Promise<void>{
         const requestBody = ctx.request.body({
             contentTypes: {

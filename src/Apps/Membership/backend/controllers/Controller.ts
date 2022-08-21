@@ -1,5 +1,5 @@
 import {Context} from '../../../../dependencies/deps.ts';
 
-export interface Controllers {
+export interface Controller {
     run(ctx: Context): Promise<void>;
 }

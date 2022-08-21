@@ -23,6 +23,7 @@ export class Server {
     router.use( async (ctx: Context, next)=> {
       try{
         await next();
+        this.logger.success(`${ctx.request.method} ${ctx.request.url.pathname}`);
       }catch(err){
         this.logger.error(err.message);
         ctx.response.status = err.status || 500;

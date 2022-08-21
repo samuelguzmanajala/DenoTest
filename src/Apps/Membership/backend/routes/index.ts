@@ -8,6 +8,6 @@ export function registerRoutes(router: Router) {
     })
 }
 async function register(routePath: string, router: Router):Promise<void> {
-    const route = await import(routePath) as Router;
+    const route:any = await import(routePath) as Router;
     await route.register(router);
 }

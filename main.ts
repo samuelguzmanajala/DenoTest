@@ -1,7 +1,7 @@
-import {Application, Context} from "./src/dependencies/deps.ts";
+import {Application} from "./src/dependencies/deps.ts";
 
 const app = new Application();
-app.use((ctx:Context) => {
-  ctx.response.body = "Hello World!";
+app.use((ctx) => {
+  ctx.response.body = "Hello World! with oak";
 });
-const listener = Deno.listen({port: 8000 });
+await app.listen({port: 8000});

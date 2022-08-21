@@ -9,6 +9,7 @@ jobs:
         strategy:
             matrix:
             mongodb-version: [4.2]
+
         steps:
             - name: Setup Deno
               uses: denoland/setup-deno@v1.1.0

@@ -4,11 +4,12 @@ export const Config ={
         doc: 'The Mongo connection URL',
         format: String,
         env: 'MONGO_URL',
-        default: 'mongodb://admin:admin@localhost:27017'
+        default: 'mongodb+srv://samuel:contrasena@cluster0.hechiqz.mongodb.net/?authMechanism=SCRAM-SHA-1'
     },
     cors: {
         allowed: false,
         allowedHost:[]
     }
 };
+//default: 'mongodb+srv://samuel:contrasena@cluster0.hechiqz.mongodb.net/?authMechanism=SCRAM-SHA-1?retryWrites=true&w=majority'
 augmentConfiguration(Config);

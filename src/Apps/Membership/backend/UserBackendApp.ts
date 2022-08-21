@@ -4,7 +4,7 @@ import container from "./dependency-injection/Container.ts";
 export class UserBackendApp{
     server?: Server;
     async start(): Promise<void> {
-        const port = Deno.env.get("PORT") || "3000";
+        const port = Deno.env.get("PORT") || "8000";
         this.server = new Server(port);
         await this.registerSubscribers();
         return this.server.listen();

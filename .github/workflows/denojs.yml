@@ -19,3 +19,5 @@ jobs:
         with:
           project: samuelguzmanajala--eno-est # the name of the project on Deno Deploy
           entrypoint: src/Apps/Membership/backend/index.ts # the entrypoint to deploy
+       - name: ls
+         run: ls -a

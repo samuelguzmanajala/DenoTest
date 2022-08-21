@@ -1,5 +1,5 @@
-import {Application} from "./src/dependencies/deps.ts";
 /*
+import {Application} from "./src/dependencies/deps.ts";
 const app = new Application();
 app.use((ctx) => {
   ctx.response.body = "Hello World! with oak";
@@ -7,3 +7,4 @@ app.use((ctx) => {
 await app.listen({port: 8000});
 
  */
+console.log('hola');

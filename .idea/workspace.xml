@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1957811e-2657-4861-b227-5a491e7f5d3f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/denojs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/denojs.yml" afterDir="false" />
-    </list>
+    <list default="true" id="1957811e-2657-4861-b227-5a491e7f5d3f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -201,7 +199,7 @@
       <workItem from="1660842011936" duration="7411000" />
       <workItem from="1660916749676" duration="2631000" />
       <workItem from="1660976479867" duration="7032000" />
-      <workItem from="1661064922662" duration="5742000" />
+      <workItem from="1661064922662" duration="6114000" />
     </task>
     <servers />
   </component>

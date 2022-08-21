@@ -1,7 +1,7 @@
-import {serve} from 'https://deno.land/std@0.140.0/http/server.ts';
+import {Application, Context} from "src/dependencies/deps.ts";
 
-serve((_req)=> {
-  return new Response('helloworld!', {
-    headers: {"content-type": "text/plain"}
-  })
-})
+const app = new Application();
+app.use((ctx:Context) => {
+  ctx.response.body = "Hello World!";
+});
+const listener = Deno.listen({port: 8000 });

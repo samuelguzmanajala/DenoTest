@@ -19,7 +19,7 @@ jobs:
         with:
           mongoDBVersion: ${{ matrix.mongodb-version }}
       - name: runBackend
-      run: |
-        deno run -c tsconfig.json --watch --allow-net --allow-read --allow-write --allow-env --unstable src/Apps/Membership/backend/start.ts
+        run: |
+          deno run -c tsconfig.json --watch --allow-net --allow-read --allow-write --allow-env --unstable src/Apps/Membership/backend/start.ts
 
 

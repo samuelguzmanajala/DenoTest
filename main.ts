@@ -1,4 +1,4 @@
-import {Application} from "https://deno.land/x/oak@v11.0.0/mod.ts";
+import {Application} from "./src/dependencies/deps.ts";
 const app = new Application();
 app.use((ctx) => {
   ctx.response.body = "Hello World! with oak";

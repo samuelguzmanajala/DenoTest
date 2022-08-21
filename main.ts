@@ -7,4 +7,11 @@ app.use((ctx) => {
 await app.listen({port: 8000});
 
  */
-console.log('hola');
+
+import {serve} from 'https://deno.land/std@140.0/http/server.ts';\
+
+serve((_req)=>{
+  return new Response('Hello World!', {
+    headers: {"content-type": "text/plain"}
+  });
+});

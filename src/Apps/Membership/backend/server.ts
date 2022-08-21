@@ -25,6 +25,7 @@ export class Server {
         await next();
         this.logger.success(`${ctx.request.method} ${ctx.request.url.pathname}`);
       }catch(err){
+        ctx.assert(err.status, err.message);
         this.logger.error(err.message);
         ctx.response.status = err.status || 500;
         ctx.response.type = 'json';

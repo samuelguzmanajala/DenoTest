@@ -12,6 +12,8 @@ jobs:
         run: docker-compose up -d
       - name: Setup Deno
         uses: denoland/setup-deno@v1.1.0
-      - name: runBackend
-        run: |
-          deno run -c tsconfig.json --allow-net --allow-read --allow-write --allow-env --unstable src/Apps/Membership/backend/start.ts
+      - name: Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: samuelguzmanajala--eno-est # the name of the project on Deno Deploy
+          entrypoint: src/Apps/backend/start.ts # the entrypoint to deploy

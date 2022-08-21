@@ -1,0 +1,19 @@
+name: Deno CI
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+            mongodb-version: [4.2]
+        steps:
+            - name: Setup Deno
+              uses: denoland/setup-deno@v1.1.0
+          - name: Launch MongoDB
+              uses: wbari/start-mongoDB@v0.2
+              with:
+                mongoDBVersion: ${{ matrix.mongodb-version }}
+

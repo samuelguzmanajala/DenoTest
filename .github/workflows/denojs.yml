@@ -10,7 +10,8 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Clone Repository
+        uses: actions/checkout@v3
       - name: Setup Deno
         uses: denoland/setup-deno@v1.1.0
       - name: ls

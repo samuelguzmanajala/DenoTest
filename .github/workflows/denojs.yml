@@ -14,7 +14,7 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v1.1.0
       - name: ls
-        run: ls
+        run: ls src
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:

@@ -14,3 +14,5 @@ export class UserBackendApp{
         await eventBus.start();
     }
 }
+const app = new UserBackendApp();
+app.start();

@@ -3,7 +3,8 @@ import {Context, Application, Router} from 'oak/mod.ts';
 /*import {oakCors} from 'oakCors/mod.ts'
 import Logger from "../../../Contexts/Shared/domain/Logger.ts";
 import container from "./dependency-injection/Container.ts";
-import { registerRoutes } from "./routes/routes.ts";*/
+*/
+import { registerRoutes } from "./routes/routes.ts";
 
 //import * as nodeProcess from "nodeProcess"
 /*
@@ -22,31 +23,26 @@ function handleError(e: Error) {
 
 */
 
-/*
 
-import {Application, Context} from "oak/mod.ts";
-
-const app = new Application();
-app.use((ctx:Context) => {
-  ctx.response.body = "Hello World! from index";
-});
-await app.listen({port: 3000});
-*/
-const port = 3000;
+//const port = 3000;
 //const logger = container.get(Logger);
 const application = new Application();
 //application.use(oakCors());
 const router = new Router();
-//registerRoutes(router);
+router.get('/prueba', (ctx:Context)=>{
+    ctx.response.body='prueba';
+});
+await registerRoutes(router);
+//console.log(router);
 application.use(router.routes());
 application.use(router.allowedMethods());
 /*
 router.use( async (ctx: Context, next)=> {
     try{
     await next();
-    logger.success(`${ctx.request.method} ${ctx.request.url.pathname}`);
+    console.log(`${ctx.request.method} ${ctx.request.url.pathname}`);
     }catch(err){
-    logger.error(err.message);
+        console.log(err.message);
     ctx.response.status = err.status || 500;
     ctx.response.type = 'json';
     ctx.response.body = {
@@ -65,4 +61,17 @@ application.addEventListener("error", (error) => {
     console.log('  Press CTRL-C to stop\n');
   });
   */
+ 
+  application.use(async (ctx:Context, next) => {
+    try{
+        console.log(router);
+        await next();
+        ctx.response.body = router;
+    }catch(e) {
+        ctx.response.body = 'hola';
+        console.assert(e.message)
+    }
+  });
+  
+
   await application.listen({port: 3000});

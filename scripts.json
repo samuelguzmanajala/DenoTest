@@ -21,7 +21,11 @@
       ],
       "unstable": true
     },
-    "deploy": {
+    "deploy-membership-backend": {
+      "cmd": "deployctl deploy --no-check --allow-all --import-map=import_map.json --project=testdeno --token=ddp_LZYCfTyrfgi0XNWcXbhvXCCAi0rw423wSmVs src/Apps/Membership/backend/index.ts",
+      "watch": false
+    },
+    "deploy-main": {
       "cmd": "deployctl deploy --no-check --allow-all --import-map=import_map.json --project=testdeno --token=ddp_LZYCfTyrfgi0XNWcXbhvXCCAi0rw423wSmVs ./main.ts"
     }
   }

@@ -1,13 +1,13 @@
 import {Router} from 'oak/mod.ts';
 import {getFilesList} from "./FilterRoutes.ts";
 
-export function registerRoutes(router: Router) {
+export async function registerRoutes(router: Router):Promise<void> {
     const __dirname = new URL(".", import.meta.url).pathname;
-    getFilesList(__dirname, {extension: 'route.ts'}).then((routes) => {
-        routes.map((route:string) => register(route, router));
-    })
+    const routes = await getFilesList(__dirname, {extension: 'route.ts'});
+    routes.map((route:string) => register(route, router));
 }
 async function register(routePath: string, router: Router):Promise<void> {
-    const route:any = await import(routePath) as Router;
+    const route = await import(routePath);
     await route.register(router);
+   console.log('hola');
 }

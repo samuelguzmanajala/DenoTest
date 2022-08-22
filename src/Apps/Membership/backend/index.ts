@@ -1,9 +1,9 @@
 //import {UserBackendApp} from "../../../Apps/Membership/backend/UserBackendApp.ts";
 import {Context, Application, Router} from 'oak/mod.ts';
-import {oakCors} from 'oakCors/mod.ts'
+/*import {oakCors} from 'oakCors/mod.ts'
 import Logger from "../../../Contexts/Shared/domain/Logger.ts";
 import container from "./dependency-injection/Container.ts";
-import { registerRoutes } from "./routes/routes.ts";
+import { registerRoutes } from "./routes/routes.ts";*/
 
 //import * as nodeProcess from "nodeProcess"
 /*

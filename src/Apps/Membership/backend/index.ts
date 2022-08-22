@@ -56,7 +56,7 @@ router.use( async (ctx: Context, next)=> {
 });
 */
 
-
+/*
 application.addEventListener("error", (error) => {
     console.log('error', error);
   });
@@ -64,4 +64,5 @@ application.addEventListener("error", (error) => {
     console.log(`  Backend App is running at http://localhost:${port}`);
     console.log('  Press CTRL-C to stop\n');
   });
+  */
   await application.listen({port: Number(port)});

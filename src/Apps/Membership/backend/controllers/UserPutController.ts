@@ -1,4 +1,3 @@
-import {helpers} from '../../../../dependencies/deps.ts';
 import {Controller} from "./Controller.ts";
 import {CreateUserCommand} from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommand.ts";
 import {
@@ -6,7 +5,7 @@ import {
 } from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommandHandler.ts";
 import container from "../dependency-injection/Container.ts";
 import {UserCreator} from "../../../../Contexts/Membership/Users/application/Create/UserCreator.ts";
-import {Context} from '../../../../dependencies/deps.ts';
+import {Context, helpers} from 'oak/mod.ts';
 
 type UserBody = {
     id: string;

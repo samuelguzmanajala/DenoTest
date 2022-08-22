@@ -1,5 +1,5 @@
 import { AggregateRoot } from "../../../domain/AggregateRoot.ts";
-import { Collection, MongoClient } from "../../../../../dependencies/Infrastructure/deps.ts";
+import { Collection, MongoClient } from 'mongo/mod.ts';
 
 export abstract class MongoRepository<T extends AggregateRoot> {
     constructor(
@@ -8,7 +8,7 @@ export abstract class MongoRepository<T extends AggregateRoot> {
 
     protected abstract moduleName(): string;
   
-    protected async client(): Promise<MongoClient> {
+    protected client(): Promise<MongoClient> {
         return this._client;
     }
   

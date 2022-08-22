@@ -1,5 +1,6 @@
-import {houston, Service} from "../../../dependencies/deps.ts";
-import Logger from "../domain/Logger.ts";
+import * as houston from "houston/mod.ts";
+import {Service} from 'di/mod.ts';
+import Logger from '../domain/Logger.ts';
 
 enum Levels {
     DEBUG = 'debug',

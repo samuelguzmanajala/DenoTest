@@ -2,7 +2,14 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "allowJs": true,
-    "strict": true
+    "strict": true,
+    "plugins": [
+      {
+        "name": "typescript-deno-plugin",
+        "enable": true,
+        "importmap":"import_map.json"
+      }
+    ]
   }
 }
 

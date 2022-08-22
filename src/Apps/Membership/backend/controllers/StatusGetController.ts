@@ -1,5 +1,5 @@
 import {Controller} from "./Controller.ts";
-import {Context} from '../../../../dependencies/deps.ts';
+import {Context} from 'oak/mod.ts';
 
 export class StatusGetController implements Controller{
     async run(ctx: Context):Promise<void>{

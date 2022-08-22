@@ -1,4 +1,4 @@
-import { Emitter } from '../../../../dependencies/deps.ts';
+import { Emitter } from 'emmiter/index.js';
 import {DomainEvent} from "../../../../Contexts/Shared/domain/DomainEvent.ts";
 import {DomainEventSubscriber} from "../../../../Contexts/Shared/domain/DomainEventSubscriber.ts";
 

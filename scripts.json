@@ -1,14 +1,18 @@
 {
+  "$schema": "https://deno.land/x/denon@2.5.0/schema.json",
   "scripts": {
-    "membership-back": {
-      "url": "Apps/Membership/backend/start.ts",
-      "cmd": "--watch",
-      "permissions": [
-        "allow-read",
-        "allow-write",
-        "allow-net",
-        "allow-env"
-      ]
+    "start": {
+      "cmd": "deno run main.ts",
+      "desc": "running prueba",
+      "tsconfig": "tsconfig.json",
+      "importMap": "import_map.json",
+      "allow": [
+        "net"
+      ],
+      "unstable": true
+    },
+    "deploy": {
+      "cmd": "deployctl deploy --no-check --allow-all --import-map=import_map.json --project=testdeno --token=ddp_LZYCfTyrfgi0XNWcXbhvXCCAi0rw423wSmVs ./main.ts"
     }
   }
 }

@@ -1,6 +1,6 @@
 import {UserRepository} from "../../domain/UserRepository.ts";
 import {UsersResponse} from "../UsersRespone.ts";
-import {Service} from "../../../../../dependencies/deps.ts";
+import {Service} from 'di/mod.ts';
 
 @Service()
 export class UsersFinder {

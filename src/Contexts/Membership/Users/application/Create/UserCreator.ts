@@ -4,7 +4,7 @@ import {UserId} from "../../domain/value-object/UserId.ts";
 import {UserMail} from "../../domain/value-object/UserMail.ts";
 import {UserPassword} from "../../domain/value-object/UserPassword.ts";
 import {User} from "../../domain/User.ts";
-import {Service, Inject} from "../../../../../dependencies/deps.ts";
+import {Service, Inject} from "di/mod.ts";
 import {EventBus} from "../../../../Shared/domain/eventBus.ts";
 import {Types} from "../../../../Shared/domain/types.ts";
 

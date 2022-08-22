@@ -1,4 +1,4 @@
-import { augmentConfiguration } from '../../../../../dependencies/deps.ts';
+import { augmentConfiguration } from 'deno_config/mod.ts';
 export const Config ={
     url: {
         doc: 'The Mongo connection URL',

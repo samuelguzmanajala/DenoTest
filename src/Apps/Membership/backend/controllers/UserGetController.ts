@@ -7,7 +7,7 @@ import {
 import container from "../dependency-injection/Container.ts";
 import {UsersFinder} from "../../../../Contexts/Membership/Users/application/searchAll/UsersFinder.ts";
 import {UsersResponse} from "../../../../Contexts/Membership/Users/application/UsersRespone.ts";
-import {Context} from "../../../../dependencies/deps.ts";
+import {Context} from "oak/mod.ts";
 
 
 export class UserGetController implements Controller{

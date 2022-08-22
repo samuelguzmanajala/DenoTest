@@ -1,11 +1,11 @@
 import {UserRepository} from "../domain/UserRepository.ts";
 import {UserId} from "../domain/value-object/UserId.ts";
 import {Service} from '../../../../dependencies/deps.ts';
-import {MongoClient} from "https://deno.land/x/mongo@v0.31.0/src/client.ts";
+import {MongoClient} from 'mongoclient';
 import {MongoRepository} from "../../../Shared/infrastructure/persistence/mongo/MongoRepository.ts";
 import {User} from "../domain/User.ts";
 import {Nullable} from "../../../Shared/domain/Nullable.ts";
-import {Inject} from "../../../../dependencies/deps.ts";
+import {Inject} from 'di/mod.ts';
 import {Types} from "../../../Shared/domain/types.ts";
 
 @Service()

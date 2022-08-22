@@ -1,5 +1,5 @@
 import {Controller} from "./Controller.ts";
-import {helpers, Context} from "../../../../dependencies/deps.ts";
+import {helpers, Context} from "oak/mod.ts";
 import {DeleteUserCommand} from "../../../../Contexts/Membership/Users/application/Delete/DeleteUserCommand.ts";
 import {
   DeleteUseCommandHandler

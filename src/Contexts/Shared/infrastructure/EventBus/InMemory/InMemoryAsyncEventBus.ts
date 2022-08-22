@@ -3,7 +3,7 @@ import {DomainEvent} from "../../../domain/DomainEvent.ts";
 import {EventEmitterBus} from "../EventEmitterBus.ts";
 import {EventBus} from "../../../domain/eventBus.ts";
 import {DomainEventMapping} from "../DomainEventMapping.ts";
-import {Inject, Service} from "../../../../../dependencies/deps.ts";
+import {Inject, Service} from 'di/mod.ts';
 import {Types} from "../../../domain/types.ts";
 
 

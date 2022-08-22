@@ -1,4 +1,4 @@
-import { v4 } from "../../../../dependencies/deps.ts";
+import { v4 } from "v4/mod.ts";
 export class Uuid {
     readonly value: string;
     constructor(value: string) {

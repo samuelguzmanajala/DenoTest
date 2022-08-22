@@ -4,6 +4,13 @@
     "v4/": "https://deno.land/std@0.112.0/uuid/",
     "oakCors/": "https://deno.land/x/cors@v1.2.2/",
     "config/": "https://deno.land/x/dotenv@v0.4.2/",
-    "path/": "https://deno.land/std@0.95.0/path/"
+    "path/": "https://deno.land/std@0.95.0/path/",
+    "nodeProcess": "https://deno.land/std@0.152.0/node/process.ts",
+    "deno_config/":"https://deno.land/x/deno_config@v0.1.1/",
+    "mongo/": "https://deno.land/x/mongo@v0.31.0/",
+    "di/": "https://deno.land/x/di@v0.1.1/",
+    "houston/": "https://x.nest.land/Houston@1.0.0/",
+    "emmiter/": "https://deno.land/x/emitter@1.0.1/",
+    "mongoclient": "https://deno.land/x/mongo@v0.31.0/src/client.ts"
   }
 }

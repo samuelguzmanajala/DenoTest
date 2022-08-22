@@ -1,6 +1,6 @@
 {
     "tasks": {
-      "start": "deno run -c tsconfig.json --import-map=import_map.json --allow-net --allow-env --allow-read --allow-write src/Apps/Membership/backend/index.ts",
+      "start": "deno run -c tsconfig.json --import-map=import_map.json --allow-all src/Apps/Membership/backend/index.ts",
       "build": "deno cache main.ts"
     }
   }

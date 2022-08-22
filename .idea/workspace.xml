@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1957811e-2657-4861-b227-5a491e7f5d3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/import_map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +61,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/xabet/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/221.5921.22/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -202,7 +204,8 @@
       <workItem from="1661064922662" duration="10429000" />
       <workItem from="1661077116785" duration="10179000" />
       <workItem from="1661147171691" duration="281000" />
-      <workItem from="1661147471894" duration="346000" />
+      <workItem from="1661147471894" duration="947000" />
+      <workItem from="1661148439985" duration="1171000" />
     </task>
     <servers />
   </component>

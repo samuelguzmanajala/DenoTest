@@ -1,12 +1,11 @@
 
-import {Application} from "./src/dependencies/deps.ts";
+import {Application} from "oak/mod.ts";
 const app = new Application();
-/*
 app.use((ctx) => {
   ctx.response.body = "Hello World! with oak 2";
 });
 await app.listen({port: 8000});
- */
+/*
 import {serve} from 'https://deno.land/std@0.140.0/http/server.ts';
 
 serve((_req)=>{
@@ -14,3 +13,4 @@ serve((_req)=>{
     headers: {"content-type": "text/plain"}
   });
 });
+*/

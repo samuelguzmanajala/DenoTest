@@ -3,8 +3,8 @@ name: Deno CI
 on: 
   push:
     branches:
-      -master
-      -pruebaDeploy
+      - master
+      - pruebaDeploy
 
 jobs:
   build:

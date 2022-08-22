@@ -33,7 +33,7 @@ app.use((ctx:Context) => {
 await app.listen({port: 3000});
 */
 const port = 3000;
-const logger = container.get(Logger);
+//const logger = container.get(Logger);
 const application = new Application();
 //application.use(oakCors());
 const router = new Router();
@@ -59,10 +59,9 @@ router.use( async (ctx: Context, next)=> {
 
 application.addEventListener("error", (error) => {
     console.log('error', error);
-    logger.error(error.message);
   });
   application.addEventListener("listen", () => {
-    logger.info(`  Backend App is running at http://localhost:${this.port}`);
-    logger.info('  Press CTRL-C to stop\n');
+    console.log(`  Backend App is running at http://localhost:${port}`);
+    console.log('  Press CTRL-C to stop\n');
   });
   await application.listen({port: Number(port)});

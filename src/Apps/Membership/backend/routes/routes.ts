@@ -10,5 +10,4 @@ export function registerRoutes(router: Router):void {
 async function register(routePath: string, router: Router):Promise<void> {
     const route = await import(routePath);
     await route.register(router);
-   console.log('hola');
 }

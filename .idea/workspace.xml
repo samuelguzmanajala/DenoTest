@@ -8,6 +8,7 @@
       <change afterPath="$PROJECT_DIR$/import_map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/persistence/mongo/MongoClientFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/persistence/mongo/MongoClientFactory.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
       <command value="Deno: start.ts" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.mongo: Compose Deployment">
+  <component name="RunManager" selected="Deno.Deno: index.ts">
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -90,7 +91,7 @@
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
-    <configuration name="Deno: index.ts" type="DenoConfigurationType" nameIsGenerated="true" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/index.ts" programParameters="run -c tsconfig.json --allow-net --allow-env --watch --allow-read --allow-write">
+    <configuration name="Deno: index.ts" type="DenoConfigurationType" nameIsGenerated="true" inputPath="$PROJECT_DIR$/src/Apps/Membership/backend/index.ts" programParameters="run -c tsconfig.json --import-map=import_map.json --allow-net --allow-env --watch --allow-read --allow-write">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -202,14 +203,7 @@
       <workItem from="1660916749676" duration="2631000" />
       <workItem from="1660976479867" duration="7032000" />
       <workItem from="1661064922662" duration="10429000" />
-<<<<<<< HEAD
       <workItem from="1661077116785" duration="12686000" />
-=======
-      <workItem from="1661077116785" duration="10179000" />
-      <workItem from="1661147171691" duration="281000" />
-      <workItem from="1661147471894" duration="947000" />
-      <workItem from="1661148439985" duration="1171000" />
->>>>>>> d11642b5fb66dd4d2ac5731402493e8948035932
     </task>
     <servers />
   </component>

@@ -2,6 +2,16 @@
   "$schema": "https://deno.land/x/denon@2.5.0/schema.json",
   "scripts": {
     "start": {
+      "cmd": "deno run src/Apps/Membership/backend/index.ts",
+      "desc": "running prueba",
+      "tsconfig": "tsconfig.json",
+      "importMap": "import_map.json",
+      "allow": [
+        "all"
+      ],
+      "unstable": true
+    },
+    "main": {
       "cmd": "deno run main.ts",
       "desc": "running prueba",
       "tsconfig": "tsconfig.json",

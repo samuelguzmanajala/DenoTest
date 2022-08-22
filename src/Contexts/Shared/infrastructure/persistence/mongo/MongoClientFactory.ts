@@ -1,7 +1,7 @@
 import { Nullable } from "../../../domain/Nullable.ts";
 import {MongoClient} from 'mongo/mod.ts';
 import {Types} from '../../../../../Contexts/Shared/domain/types.ts';
-//import "reflection";
+import "reflection";
 import { Service, Inject } from "di/mod.ts";
 import MongoConfig from "./MongoConfig.ts";
 

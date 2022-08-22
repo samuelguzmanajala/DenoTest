@@ -65,4 +65,4 @@ application.addEventListener("error", (error) => {
     console.log('  Press CTRL-C to stop\n');
   });
   */
-  await application.listen({port: Number(port)});
+  await application.listen({port: 3000});

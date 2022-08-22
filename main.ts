@@ -6,8 +6,6 @@ app.use((ctx) => {
 });
 await app.listen({port: 8000});
  */
-
-
 import {serve} from 'https://deno.land/std@0.140.0/http/server.ts';
 
 serve((_req)=>{

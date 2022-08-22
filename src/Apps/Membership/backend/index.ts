@@ -1,4 +1,4 @@
-//import {UserBackendApp} from "../../../Apps/Membership/backend/UserBackendApp.ts";
+import {UserBackendApp} from "../../../Apps/Membership/backend/UserBackendApp.ts";
 
 //const backendApp: UserBackendApp = new UserBackendApp();
 //import * as nodeProcess from "nodeProcess"

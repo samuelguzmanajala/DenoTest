@@ -35,11 +35,12 @@ await app.listen({port: 3000});
 const port = 3000;
 const logger = container.get(Logger);
 const application = new Application();
-application.use(oakCors());
+//application.use(oakCors());
 const router = new Router();
-registerRoutes(router);
+//registerRoutes(router);
 application.use(router.routes());
 application.use(router.allowedMethods());
+/*
 router.use( async (ctx: Context, next)=> {
     try{
     await next();
@@ -53,6 +54,7 @@ router.use( async (ctx: Context, next)=> {
     };
     }
 });
+*/
 
 
 application.addEventListener("error", (error) => {

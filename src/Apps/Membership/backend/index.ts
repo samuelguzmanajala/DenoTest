@@ -1,7 +1,7 @@
 import {UserBackendApp} from "../../../Apps/Membership/backend/UserBackendApp.ts";
 
 const backendApp: UserBackendApp = new UserBackendApp();
-backendApp.start();
+await backendApp.start();
 //import * as nodeProcess from "nodeProcess"
 /*
 try{

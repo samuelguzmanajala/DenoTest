@@ -1,6 +1,10 @@
 name: Deno CI
 
-on: [push]
+on: 
+  push:
+    branches:
+      -master
+      -pruebaDeploy
 
 jobs:
   build:

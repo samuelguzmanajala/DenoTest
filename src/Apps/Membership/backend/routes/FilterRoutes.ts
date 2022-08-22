@@ -1,4 +1,4 @@
-import {path} from "../../../../dependencies/deps.ts"
+import * as path from "path/mod.ts"
 interface FilterOptions {
     extension?: string;
 }

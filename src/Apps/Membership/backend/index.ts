@@ -1,5 +1,5 @@
 import {UserBackendApp} from "../../../Apps/Membership/backend/UserBackendApp.ts";
-import {nodeProcess} from "../../../dependencies/deps.ts"
+import * as nodeProcess from "nodeProcess"
 try{
     const backendApp: UserBackendApp = new UserBackendApp();
     backendApp.start().catch(handleError);

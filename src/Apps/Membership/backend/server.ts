@@ -1,9 +1,8 @@
 import Logger from "../../../Contexts/Shared/domain/Logger.ts";
-import {Application, Router} from "../../../dependencies/deps.ts"
 import container from "./dependency-injection/Container.ts";
 import {registerRoutes} from "./routes/routes.ts";
-import {oakCors} from "../../../dependencies/deps.ts";
-import {Context} from '../../../dependencies/deps.ts';
+import {oakCors} from "oakCors/mod.ts";
+import {Application, Router, Context} from 'oak/mod.ts';
 
 
 export class Server {

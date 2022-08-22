@@ -1,4 +1,4 @@
-import {ServiceCollection} from "../../../../dependencies/deps.ts";
+import {ServiceCollection} from 'servicecollection/mod.ts';
 import {MongoClientFactory} from "../../../../Contexts/Shared/infrastructure/persistence/mongo/MongoClientFactory.ts";
 import {Types} from "../../../../Contexts/Shared/domain/types.ts";
 import {MongoConfigFactory} from "../../../../Contexts/Membership/Shared/infrastructure/persistence/mongo/MongoConfigFactory.ts";

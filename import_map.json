@@ -11,6 +11,7 @@
     "di/": "https://deno.land/x/di@v0.1.1/",
     "houston/": "https://x.nest.land/Houston@1.0.0/",
     "emmiter/": "https://deno.land/x/emitter@1.0.1/",
-    "mongoclient": "https://deno.land/x/mongo@v0.31.0/src/client.ts"
+    "mongoclient": "https://deno.land/x/mongo@v0.31.0/src/client.ts",
+    "servicecollection/": "https://deno.land/x/di@v0.1.1/"
   }
 }

@@ -1,4 +1,4 @@
-import {Router} from "../../../../dependencies/deps.ts";
+import {Router} from 'oak/mod.ts';
 import {getFilesList} from "./FilterRoutes.ts";
 
 export function registerRoutes(router: Router) {

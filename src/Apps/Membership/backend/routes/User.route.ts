@@ -1,4 +1,4 @@
-import {Router} from "../../../../dependencies/deps.ts";
+import {Router} from "oak/mod.ts";
 import {UserPutController} from "../controllers/UserPutController.ts";
 import {UserGetController} from "../controllers/UserGetController.ts";
 import {UserDeleteController} from "../controllers/UserDeleteController.ts";

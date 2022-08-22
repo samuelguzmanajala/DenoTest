@@ -1,5 +1,5 @@
 //import {UserBackendApp} from "../../../Apps/Membership/backend/UserBackendApp.ts";
-console.log("Starting UserBackendApp");
+
 //const backendApp: UserBackendApp = new UserBackendApp();
 //import * as nodeProcess from "nodeProcess"
 /*
@@ -17,3 +17,11 @@ function handleError(e: Error) {
 }
 
 */
+
+import {Application, Context} from "oak/mod.ts";
+
+const app = new Application();
+app.use((ctx:Context) => {
+  ctx.response.body = "Hello World! from index";
+});
+await app.listen({port: 3000});

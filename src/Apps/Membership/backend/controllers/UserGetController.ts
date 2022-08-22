@@ -12,7 +12,6 @@ import {Context} from "oak/mod.ts";
 
 export class UserGetController implements Controller{
     async run(ctx: Context): Promise<void> {
-        console.log('userGetController');
         const query = new SearchAllUsersQuery();
         const usersHandler: SearchAllUsersQueryHandler = new SearchAllUsersQueryHandler(container.get(UsersFinder));
         const userResponse: UsersResponse = await usersHandler.handle(query);

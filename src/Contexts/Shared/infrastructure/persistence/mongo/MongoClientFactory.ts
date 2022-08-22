@@ -1,7 +1,7 @@
 import { Nullable } from "../../../domain/Nullable.ts";
 import {MongoClient} from 'mongo/mod.ts';
 import {Types} from '../../../../../Contexts/Shared/domain/types.ts';
-import "https://cdn.pika.dev/@abraham/reflection@^0.7.0";
+//import "reflection";
 import { Service, Inject } from "di/mod.ts";
 import MongoConfig from "./MongoConfig.ts";
 

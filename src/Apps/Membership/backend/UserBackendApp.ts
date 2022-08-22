@@ -1,5 +1,5 @@
 import {EventBus} from "../../../Contexts/Shared/domain/eventBus.ts";
-import {Server} from "/src/Apps/Membership/backend/server.ts";
+import {Server} from "./server.ts";
 import container from "./dependency-injection/Container.ts";
 export class UserBackendApp{
     server?: Server;

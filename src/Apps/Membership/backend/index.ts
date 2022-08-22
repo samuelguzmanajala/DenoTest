@@ -1,5 +1,6 @@
 import {UserBackendApp} from "../../../Apps/Membership/backend/UserBackendApp.ts";
-const backendApp: UserBackendApp = new UserBackendApp();
+console.log("Starting UserBackendApp");
+//const backendApp: UserBackendApp = new UserBackendApp();
 //import * as nodeProcess from "nodeProcess"
 /*
 try{

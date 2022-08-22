@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1957811e-2657-4861-b227-5a491e7f5d3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/import_map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/persistence/mongo/MongoClientFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contexts/Shared/infrastructure/persistence/mongo/MongoClientFactory.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

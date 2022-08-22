@@ -3,7 +3,7 @@
   "scripts": {
     "start": {
       "cmd": "deno run src/Apps/Membership/backend/index.ts",
-      "desc": "running prueba",
+      "desc": "running Membership backend",
       "tsconfig": "tsconfig.json",
       "importMap": "import_map.json",
       "allow": [

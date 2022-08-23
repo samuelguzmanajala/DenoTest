@@ -23,7 +23,7 @@ export class UserPutController implements Controller{
                 text: ['text']
             }
         });
-        const body:any = await requestBody.value;
+        const body:Object = await requestBody.value;
         const params = helpers.getQuery(ctx, {mergeParams: true});
         const user: UserBody = {...(body as UserBody), id: params.id};
         const createUserCommand: CreateUserCommand = new CreateUserCommand({...user});

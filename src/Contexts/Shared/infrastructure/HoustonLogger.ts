@@ -6,7 +6,8 @@ enum Levels {
     DEBUG = 'debug',
     ERROR = 'error',
     INFO = 'info',
-    WARN = 'warn'
+    WARN = 'warn',
+    SUCCESS = 'success'
 }
 const config: houston.Config = {
     format: houston.Format.text,
@@ -24,11 +25,13 @@ class HoustonLogger implements Logger {
     private logger: houston.Houston;
     constructor() {
         this.logger = new houston.Houston([
+            new houston.FileTransport(`logs`, [houston.LogLevel.Info, houston.LogLevel.Success, houston.LogLevel.Error, houston.LogLevel.Warning]),
             new houston.ConsoleTransport(
                 [houston.LogLevel.Warning, houston.LogLevel.Error, houston.LogLevel.Info, houston.LogLevel.Success],
                 config
             )
-        ], config);
+        ]
+        , config);
     }
     debug(message: string): void {
         this.logger.warning(message);

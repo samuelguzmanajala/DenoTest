@@ -1,3 +1,4 @@
+import { CreateUserCommand } from "../../../../../src/Contexts/Membership/Users/application/Create/CreateUserCommand.ts";
 import { User } from "../../../../../src/Contexts/Membership/Users/domain/User.ts";
 import { UserId } from "../../../../../src/Contexts/Membership/Users/domain/value-object/UserId.ts";
 import { UserMail } from "../../../../../src/Contexts/Membership/Users/domain/value-object/UserMail.ts";
@@ -13,6 +14,16 @@ export class UserMother{
     static create(id: UserId, name: UserName, password: UserPassword, mail:UserMail): User{
         return new User(id, name, password, mail);
     }
+
+    static fromCommand(command: CreateUserCommand):User{
+        return this.create(
+            UserIdMother.create(command.id),
+            UserNameMother.create(command.name),
+            UserPasswordMother.create(command.password),
+            UserMailMother.create(command.mail)
+        )
+    }
+
     static random(): User{
         return this.create(UserIdMother.random(), UserNameMother.random(), UserPasswordMother.random(), UserMailMother.random());
     }

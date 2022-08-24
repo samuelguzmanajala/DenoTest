@@ -4,7 +4,6 @@ import { MotherCreator } from "./MotherCreator.ts";
 export class PasswordMother{
     static random(): string {
         const rand: number = Math.floor(Math.random()*10) + 10;
-        console.log(rand);
         return MotherCreator.random().random.alphaNumeric(rand);
     }
 }

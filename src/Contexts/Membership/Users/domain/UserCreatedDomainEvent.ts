@@ -1,4 +1,5 @@
-import {DomainEvent} from "../../Shared/domain/DomainEvent.ts";
+import { DomainEvent } from "../../../Shared/domain/DomainEvent.ts";
+
 
 type CreateUserDomainEventBody = {
     readonly id: string;
@@ -47,10 +48,10 @@ export class UserCreatedDomainEvent extends DomainEvent {
     }
 
     static fromPrimitives(
-                              aggregateId,
-                              body,
-                              eventId,
-                              occurredOn
+        aggregateId:string,
+        body: CreateUserDomainEventBody,
+        eventId: string,
+        occurredOn: Date
     ): DomainEvent {
         return new UserCreatedDomainEvent({
             id: aggregateId,
@@ -58,7 +59,7 @@ export class UserCreatedDomainEvent extends DomainEvent {
             password: body.password,
             mail: body.mail,
             eventId,
-            occurredOn,
+            ocurredOn: occurredOn
         });
     }
 }

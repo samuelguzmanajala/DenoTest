@@ -1,49 +1,58 @@
 import { UserRepository } from "../../../../../src/Contexts/Membership/Users/domain/UserRepository.ts";
-import { returnsArgs, returnsNext, spy, stub } from "testing/mock.ts";
-import { customPromisifyArgs } from "https://deno.land/std@0.152.0/node/internal/util.mjs";
+import { spy } from "testing/mock.ts";
 import { User } from "../../../../../src/Contexts/Membership/Users/domain/User.ts";
 import { UserId } from "../../../../../src/Contexts/Membership/Users/domain/value-object/UserId.ts";
-import { UserName } from "../../../../../src/Contexts/Membership/Users/domain/value-object/UserName.ts";
-import { UserPassword } from "../../../../../src/Contexts/Membership/Users/domain/value-object/UserPassword.ts";
-import { UserMail } from "../../../../../src/Contexts/Membership/Users/domain/value-object/UserMail.ts";
-import { UsersFinder } from "../../../../../src/Contexts/Membership/Users/application/searchAll/UsersFinder.ts";
 import { Nullable } from "../../../../../src/Contexts/Shared/domain/Nullable.ts";
-
-async function mocksavefn(user:User):Promise<void>{}
-async function mockSearchfn(id: UserId): Promise<Nullable<User>>{
-  return await new User(id,
-  new UserName('test'),
-  new UserPassword('12345678'),
-  new UserMail('test@gmail.com')
-  );
-}
-async function deletefn(id: UserId): Promise<void> {}
-async function updatefn(user:User): Promise<void> {}
-async function mocksearchAllfn(): Promise<User[]> {
-    const users:User[] = await [new User(
-        new UserId('002061f9-1735-4ae3-9634-b5b2a5541313'),
-        new UserName('test'),
-        new UserPassword('12345678'),
-        new UserMail('test@gmail.com')
-        )];
-    return users;
-}
-
+import { assertEquals, assertInstanceOf } from 'testing/asserts.ts';
+import { UserNameMother } from "../domain/UserNameMother.ts";
+import { UserPasswordMother } from "../domain/UserPasswordMother.ts";
+import { UserMailMother } from "../domain/UserMailMother.ts";
 
 export class UserRepositoryMock implements UserRepository {
+
+  private mockSave = spy();
+
+  private mockSearch = spy((id:UserId)=>{
+    if(Math.random() > 0.5){
+      return new User(id, UserNameMother.random(), UserPasswordMother.random(), UserMailMother.random());
+    }else{
+      return null;
+    }
+  });
+
+  private mockSearchAll = spy(()=>{
+    return [];
+  });
+
+  private mockUpdate = spy();
+  private mockDelete = spy();
+
   async save(user: User): Promise<void> {
-    await mocksavefn(user);
+    await this.mockSave(user);
   }
+
+  assertLastSavedUserIs(expected: User): void {
+    const lastSavedUser = this.mockSave.calls[this.mockSave.calls.length-1].args[0] as User;
+    assertInstanceOf(lastSavedUser, User);
+    assertEquals(lastSavedUser.toPrimitives(), expected.toPrimitives());
+  }
+
   async search(id: UserId): Promise<Nullable<User>> {
-    return await mockSearchfn(id);
+    return await this.mockSearch(id);
   }
+
+  assertLastSearchedUserIs(expected: UserId): void {
+    const id = this.mockSearch.calls[this.mockSearch.calls.length-1].args[0] as UserId;
+    assertEquals(id, expected);
+  }
+
   async searchAll(): Promise<User[]> {
-    return await mocksearchAllfn();
+    return await this.mockSearchAll();
   }
   async delete(id: UserId): Promise<void> {
-    await deletefn(id);
+    await this.mockDelete(id);
   }
   async update(user: User): Promise<void> {
-    await updatefn(user);
+    await this.mockUpdate(user);
   }
 }

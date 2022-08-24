@@ -16,6 +16,8 @@
     "emmiter/": "https://deno.land/x/emitter@1.0.1/",
     "mongoclient": "https://deno.land/x/mongo@v0.31.0/src/client.ts",
     "reflection": "https://cdn.skypack.dev/@abraham/reflection@^0.7.0",
-    "servicecollection/": "https://deno.land/x/di@v0.1.1/"
+    "servicecollection/": "https://deno.land/x/di@v0.1.1/",
+    "testing/": "https://deno.land/std@0.152.0/testing/",
+    "faker/": "https://deno.land/x/deno_faker@v1.0.3/"
   }
 }

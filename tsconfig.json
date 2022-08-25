@@ -7,9 +7,8 @@
       {
         "name": "typescript-deno-plugin",
         "enable": true,
-        "importmap":"import_map.json"
+        "importmap": "import_map.json"
       }
     ]
   }
 }
-

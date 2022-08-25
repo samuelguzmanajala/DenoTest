@@ -1,1 +1,5 @@
-export {Bson, MongoClient, Collection} from "https://deno.land/x/mongo@v0.31.0/mod.ts";
+export {
+  Bson,
+  Collection,
+  MongoClient,
+} from "https://deno.land/x/mongo@v0.31.0/mod.ts";

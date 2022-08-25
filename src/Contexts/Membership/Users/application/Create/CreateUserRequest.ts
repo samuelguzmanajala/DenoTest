@@ -1,6 +1,6 @@
 export type CreateUserRequest = {
-    id: string;
-    name: string;
-    password: string;
-    mail: string;
-}
+  id: string;
+  name: string;
+  password: string;
+  mail: string;
+};

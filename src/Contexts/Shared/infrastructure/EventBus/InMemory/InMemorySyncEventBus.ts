@@ -1,49 +1,59 @@
-import {DomainEventSubscriber} from "../../../domain/DomainEventSubscriber.ts";
-import {DomainEvent} from "../../../domain/DomainEvent.ts";
-import {EventBus} from "../../../domain/eventBus.ts";
-import {DomainEventMapping} from "../DomainEventMapping.ts";
+import { DomainEventSubscriber } from "../../../domain/DomainEventSubscriber.ts";
+import { DomainEvent } from "../../../domain/DomainEvent.ts";
+import { EventBus } from "../../../domain/eventBus.ts";
+import { DomainEventMapping } from "../DomainEventMapping.ts";
 
 type Subscription = {
-    boundedCallback: Function;
-    originalCallback: Function;
+  boundedCallback: Function;
+  originalCallback: Function;
 };
 
 export class InMemorySyncEventBus implements EventBus {
-    private subscriptions: Map<string, Array<Subscription>>;
+  private subscriptions: Map<string, Array<Subscription>>;
 
-    constructor() {
-        this.subscriptions = new Map();
-    }
+  constructor() {
+    this.subscriptions = new Map();
+  }
 
-    async start(): Promise<void> {}
+  async start(): Promise<void> {}
 
-    async publish(events: Array<DomainEvent>): Promise<void> {
-        const executions: any = [];
-        events.map(event => {
-            const subscribers = this.subscriptions.get(event.eventName);
-            if (subscribers) {
-                return subscribers.map(subscriber => executions.push(subscriber.boundedCallback(event)));
-            }
-        });
-
-        await Promise.all(executions);
-    }
-
-    addSubscribers(subscribers: Array<DomainEventSubscriber<DomainEvent>>) {
-        subscribers.map(subscriber =>
-            subscriber.subscribedTo().map(event => this.subscribe(event.EVENT_NAME!, subscriber))
+  async publish(events: Array<DomainEvent>): Promise<void> {
+    const executions: any = [];
+    events.map((event) => {
+      const subscribers = this.subscriptions.get(event.eventName);
+      if (subscribers) {
+        return subscribers.map((subscriber) =>
+          executions.push(subscriber.boundedCallback(event))
         );
-    }
+      }
+    });
 
-    setDomainEventMapping(domainEventMapping: DomainEventMapping): void {}
+    await Promise.all(executions);
+  }
 
-    private subscribe(topic: string, subscriber: DomainEventSubscriber<DomainEvent>): void {
-        const currentSubscriptions = this.subscriptions.get(topic);
-        const subscription = { boundedCallback: subscriber.on.bind(subscriber), originalCallback: subscriber.on };
-        if (currentSubscriptions) {
-            currentSubscriptions.push(subscription);
-        } else {
-            this.subscriptions.set(topic, [subscription]);
-        }
+  addSubscribers(subscribers: Array<DomainEventSubscriber<DomainEvent>>) {
+    subscribers.map((subscriber) =>
+      subscriber.subscribedTo().map((event) =>
+        this.subscribe(event.EVENT_NAME!, subscriber)
+      )
+    );
+  }
+
+  setDomainEventMapping(domainEventMapping: DomainEventMapping): void {}
+
+  private subscribe(
+    topic: string,
+    subscriber: DomainEventSubscriber<DomainEvent>,
+  ): void {
+    const currentSubscriptions = this.subscriptions.get(topic);
+    const subscription = {
+      boundedCallback: subscriber.on.bind(subscriber),
+      originalCallback: subscriber.on,
+    };
+    if (currentSubscriptions) {
+      currentSubscriptions.push(subscription);
+    } else {
+      this.subscriptions.set(topic, [subscription]);
     }
+  }
 }

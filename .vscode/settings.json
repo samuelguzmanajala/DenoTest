@@ -1,9 +1,9 @@
 {
-    "deno.enable": true,
-    "deno.unstable": false,
-    "deno.importMap": "./import_map.json",
-    "deno.config": "./tsconfig.json",
-    "deno.lint": true,
-    "window.zoomLevel": 2.2,
-    "editor.fontSize": 16
+  "deno.enable": true,
+  "deno.unstable": false,
+  "deno.importMap": "./import_map.json",
+  "deno.config": "./tsconfig.json",
+  "deno.lint": true,
+  "window.zoomLevel": 2.2,
+  "editor.fontSize": 16
 }

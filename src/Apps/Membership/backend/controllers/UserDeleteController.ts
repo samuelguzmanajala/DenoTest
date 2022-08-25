@@ -1,19 +1,20 @@
-import {Controller} from "./Controller.ts";
-import {helpers, Context} from "oak/mod.ts";
-import {DeleteUserCommand} from "../../../../Contexts/Membership/Users/application/Delete/DeleteUserCommand.ts";
+import { Controller } from "./Controller.ts";
+import { Context, helpers } from "oak/mod.ts";
+import { DeleteUserCommand } from "../../../../Contexts/Membership/Users/application/Delete/DeleteUserCommand.ts";
 import {
-  DeleteUseCommandHandler
+  DeleteUseCommandHandler,
 } from "../../../../Contexts/Membership/Users/application/Delete/DeleteUseCommandHandler.ts";
 import container from "../dependency-injection/Container.ts";
-import {UserRemover} from "../../../../Contexts/Membership/Users/application/Delete/UserRemover.ts";
+import { UserRemover } from "../../../../Contexts/Membership/Users/application/Delete/UserRemover.ts";
 
 export class UserDeleteController implements Controller {
   async run(ctx: Context): Promise<void> {
-        const params = helpers.getQuery(ctx, {mergeParams: true});
-        const id = params.id;
-        const deleteUserCommand: DeleteUserCommand = new DeleteUserCommand({id});
-        const deleteUserCommandHandler: DeleteUseCommandHandler = new DeleteUseCommandHandler(container.get(UserRemover));
-        await deleteUserCommandHandler.handle(deleteUserCommand);
-        ctx.response.status = 200;
-    }
+    const params = helpers.getQuery(ctx, { mergeParams: true });
+    const id = params.id;
+    const deleteUserCommand: DeleteUserCommand = new DeleteUserCommand({ id });
+    const deleteUserCommandHandler: DeleteUseCommandHandler =
+      new DeleteUseCommandHandler(container.get(UserRemover));
+    await deleteUserCommandHandler.handle(deleteUserCommand);
+    ctx.response.status = 200;
+  }
 }

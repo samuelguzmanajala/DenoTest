@@ -11,6 +11,9 @@
       ],
       "unstable": true
     },
+    "tests": {
+      "cmd": "deno test"
+    },
     "main": {
       "cmd": "deno run main.ts",
       "desc": "running prueba",

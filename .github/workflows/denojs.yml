@@ -4,25 +4,30 @@ on:
   push:
     branches:
       - master
-      - pruebaDeploy
+      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        deno-version: [1.8.2]
+
     permissions:
       id-token: write # This is required to allow the GitHub Action to authenticate with Deno Deploy.
       contents: read
 
     steps:
-      - name: Clone Repository
+      - name: Git Checkout Deno Module
         uses: actions/checkout@v3
-      - name: ls
-        run: ls -a
-      - name: Deploy to Deno Deploy
-        uses: denoland/deployctl@v1
+      - name: Use Deno version ${{matrix.deno-version}}
+        uses: denoland/setup-deno@v1
         with:
-          project: testdeno # the name of the project on Deno Deploy
-          entrypoint: src/Apps/Membership/backend/index.ts # the entrypoint to deploy
-          import-map: import_map.json
-      - name: ls2
-        run: ls -a
+          deno-version: ${{ matrix.deno-version }}
+      - name: Lint Deno
+        run: deno fmt --check
+      - name: Build Deno
+        run: deno run --reload src/Apps/Membership/backend/index.ts
+      - name: Test Deno
+        run: deno test --allow-none --import-map=import_map.json

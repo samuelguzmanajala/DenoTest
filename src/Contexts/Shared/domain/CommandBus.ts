@@ -1,4 +1,4 @@
-import {Command} from "./Command.ts";
+import { Command } from "./Command.ts";
 export interface CommandBus {
-    dispatch(command: Command): Promise<void>;
+  dispatch(command: Command): Promise<void>;
 }

@@ -10,21 +10,31 @@ import { UserMailMother } from "./UserMailMother.ts";
 import { UserNameMother } from "./UserNameMother.ts";
 import { UserPasswordMother } from "./UserPasswordMother.ts";
 
-export class UserMother{
-    static create(id: UserId, name: UserName, password: UserPassword, mail:UserMail): User{
-        return new User(id, name, password, mail);
-    }
+export class UserMother {
+  static create(
+    id: UserId,
+    name: UserName,
+    password: UserPassword,
+    mail: UserMail,
+  ): User {
+    return new User(id, name, password, mail);
+  }
 
-    static fromCommand(command: CreateUserCommand):User{
-        return this.create(
-            UserIdMother.create(command.id),
-            UserNameMother.create(command.name),
-            UserPasswordMother.create(command.password),
-            UserMailMother.create(command.mail)
-        )
-    }
+  static fromCommand(command: CreateUserCommand): User {
+    return this.create(
+      UserIdMother.create(command.id),
+      UserNameMother.create(command.name),
+      UserPasswordMother.create(command.password),
+      UserMailMother.create(command.mail),
+    );
+  }
 
-    static random(): User{
-        return this.create(UserIdMother.random(), UserNameMother.random(), UserPasswordMother.random(), UserMailMother.random());
-    }
+  static random(): User {
+    return this.create(
+      UserIdMother.random(),
+      UserNameMother.random(),
+      UserPasswordMother.random(),
+      UserMailMother.random(),
+    );
+  }
 }

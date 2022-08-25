@@ -1,34 +1,37 @@
-import {Controller} from "./Controller.ts";
-import {CreateUserCommand} from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommand.ts";
+import { Controller } from "./Controller.ts";
+import { CreateUserCommand } from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommand.ts";
 import {
-    CreateUserCommandHandler
+  CreateUserCommandHandler,
 } from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommandHandler.ts";
 import container from "../dependency-injection/Container.ts";
-import {UserCreator} from "../../../../Contexts/Membership/Users/application/Create/UserCreator.ts";
-import {Context, helpers} from 'oak/mod.ts';
+import { UserCreator } from "../../../../Contexts/Membership/Users/application/Create/UserCreator.ts";
+import { Context, helpers } from "oak/mod.ts";
 
 type UserBody = {
-    id: string;
-    name: string;
-    mail: string;
-    password: string;
-}
+  id: string;
+  name: string;
+  mail: string;
+  password: string;
+};
 
-export class UserPutController implements Controller{
-    async run(ctx: Context):Promise<void>{
-        const requestBody = ctx.request.body({
-            contentTypes: {
-                json: ['application/json'],
-                form: [ 'multipart', 'urlencoded'],
-                text: ['text']
-            }
-        });
-        const body:Object = await requestBody.value;
-        const params = helpers.getQuery(ctx, {mergeParams: true});
-        const user: UserBody = {...(body as UserBody), id: params.id};
-        const createUserCommand: CreateUserCommand = new CreateUserCommand({...user});
-        const createUserCommandHandler: CreateUserCommandHandler = new CreateUserCommandHandler(container.get(UserCreator));
-        await createUserCommandHandler.handle(createUserCommand);
-        ctx.response.status = 200;
-    }
+export class UserPutController implements Controller {
+  async run(ctx: Context): Promise<void> {
+    const requestBody = ctx.request.body({
+      contentTypes: {
+        json: ["application/json"],
+        form: ["multipart", "urlencoded"],
+        text: ["text"],
+      },
+    });
+    const body: Object = await requestBody.value;
+    const params = helpers.getQuery(ctx, { mergeParams: true });
+    const user: UserBody = { ...(body as UserBody), id: params.id };
+    const createUserCommand: CreateUserCommand = new CreateUserCommand({
+      ...user,
+    });
+    const createUserCommandHandler: CreateUserCommandHandler =
+      new CreateUserCommandHandler(container.get(UserCreator));
+    await createUserCommandHandler.handle(createUserCommand);
+    ctx.response.status = 200;
+  }
 }

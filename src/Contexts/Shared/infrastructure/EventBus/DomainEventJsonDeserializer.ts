@@ -1,26 +1,26 @@
-import { DomainEventMapping } from './/DomainEventMapping.ts';
+import { DomainEventMapping } from ".//DomainEventMapping.ts";
 
 export class DomainEventJsonDeserializer {
-    private mapping: DomainEventMapping;
+  private mapping: DomainEventMapping;
 
-    constructor(mapping: DomainEventMapping) {
-        this.mapping = mapping;
+  constructor(mapping: DomainEventMapping) {
+    this.mapping = mapping;
+  }
+
+  deserialize(event: string) {
+    const eventData = JSON.parse(event).data;
+    const eventName = eventData.type;
+    const eventClass = this.mapping.for(eventName);
+
+    if (!eventClass) {
+      return;
     }
 
-    deserialize(event: string) {
-        const eventData = JSON.parse(event).data;
-        const eventName = eventData.type;
-        const eventClass = this.mapping.for(eventName);
-
-        if (!eventClass) {
-            return;
-        }
-
-        return eventClass.fromPrimitives(
-            eventData.attributes.id,
-            eventData.attributes,
-            eventData.id,
-            eventData.occurred_on
-        );
-    }
+    return eventClass.fromPrimitives(
+      eventData.attributes.id,
+      eventData.attributes,
+      eventData.id,
+      eventData.occurred_on,
+    );
+  }
 }

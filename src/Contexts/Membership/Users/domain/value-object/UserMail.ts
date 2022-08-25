@@ -5,7 +5,8 @@ export class UserMail extends StringValueObject {
     super(value);
   }
   ensureIsValidString(value: string): void {
-    if (!value.includes("@")) {
+    const validMailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(!validMailRegex.exec(value)){
       throw new Error(`"${value}" is not a valid email.`);
     }
   }

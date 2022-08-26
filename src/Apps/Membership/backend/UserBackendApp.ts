@@ -1,6 +1,10 @@
 import { EventBus } from "../../../Contexts/Shared/domain/eventBus.ts";
 import { Server } from "./server.ts";
 import container from "./dependency-injection/Container.ts";
+import { DomainEventSubscriber } from "../../../Contexts/Shared/domain/DomainEventSubscriber.ts";
+import { DomainEvent } from "../../../Contexts/Shared/domain/DomainEvent.ts";
+import { DomainEventMapping } from "../../../Contexts/Shared/infrastructure/EventBus/DomainEventMapping.ts";
+import { Types } from "../../../Contexts/Shared/domain/types.ts";
 export class UserBackendApp {
   server?: Server;
   async start(): Promise<void> {
@@ -11,6 +15,15 @@ export class UserBackendApp {
   }
   private async registerSubscribers() {
     const eventBus: EventBus = container.get(EventBus);
+
+    //TODO: Fix subscriberDefinition
+    const subscriberDefinition = container.get(Types.commandHandler);
+    const subscribers: Array<DomainEventSubscriber<DomainEvent>> = [];
+
+    const domainEventMapping = new DomainEventMapping(subscribers);
+
+    eventBus.setDomainEventMapping(domainEventMapping);
+    eventBus.addSubscribers(subscribers);
     await eventBus.start();
   }
 }

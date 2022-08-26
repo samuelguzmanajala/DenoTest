@@ -11,7 +11,10 @@ export class InMemoryAsyncEventBus implements EventBus {
   private bus: EventEmitterBus;
 
   constructor(
-    @Inject(Types.Subscribers) subscribers: Array<DomainEventSubscriber<DomainEvent>>) {
+    @Inject(Types.Subscribers) subscribers: Array<
+      DomainEventSubscriber<DomainEvent>
+    >,
+  ) {
     this.bus = new EventEmitterBus(subscribers);
   }
 

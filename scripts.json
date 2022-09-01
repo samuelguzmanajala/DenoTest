@@ -23,7 +23,9 @@
       "unstable": true
     },
     "tests": {
-      "cmd": "deno test"
+      "cmd": "deno test",
+      "desc": "running Tests",
+      "importMap": "import_map.json"
     },
     "main": {
       "cmd": "deno run main.ts",

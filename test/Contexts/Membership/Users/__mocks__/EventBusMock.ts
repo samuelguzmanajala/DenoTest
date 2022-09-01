@@ -1,5 +1,5 @@
 import { assertEquals, assertFalse } from "testing/asserts.ts";
-import { spy } from "testing/mock.ts";
+import { spy } from 'testing/mock.ts';
 import { DomainEvent } from "../../../../../src/Contexts/Shared/domain/DomainEvent.ts";
 import { DomainEventSubscriber } from "../../../../../src/Contexts/Shared/domain/DomainEventSubscriber.ts";
 import { EventBus } from "../../../../../src/Contexts/Shared/domain/eventBus.ts";

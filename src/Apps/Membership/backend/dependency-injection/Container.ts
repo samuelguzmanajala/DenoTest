@@ -30,6 +30,7 @@ import { Command } from "../../../../Contexts/Shared/domain/Command.ts";
 import { UserPutController } from "../controllers/UserPutController.ts";
 import { RabbitMqConfigFactory } from "../../../../Contexts/Membership/Shared/infrastructure/eventBus/RabbitMq/RabbitMqConfigFactory.ts";
 import RabbitMqEventBus from "../../../../Contexts/Shared/infrastructure/EventBus/RabbitMq/RabbitMqEventBus.ts";
+import {SMTPClientEmailSender} from "../../../../Contexts/Retention/Campaign/infrastructure/SMTPClientEmailSender.ts";
 
 const container = new ServiceCollection();
 container.addTransientDynamic(

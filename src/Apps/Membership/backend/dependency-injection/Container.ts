@@ -1,6 +1,5 @@
 import {
   ServiceCollection,
-  ServiceMultiCollection,
 } from "servicecollection/mod.ts";
 import { MongoClientFactory } from "../../../../Contexts/Shared/infrastructure/persistence/mongo/MongoClientFactory.ts";
 import { Types } from "../../../../Contexts/Shared/domain/types.ts";
@@ -18,15 +17,28 @@ import { UsersFinder } from "../../../../Contexts/Membership/Users/application/s
 import { UserRemover } from "../../../../Contexts/Membership/Users/application/Delete/UserRemover.ts";
 import { CommandHandlersInformation } from "../../../../Contexts/Shared/infrastructure/CommandBus/CommandHandlersInformation.ts";
 import { InMemoryCommandBus } from "../../../../Contexts/Shared/infrastructure/CommandBus/InMemoryCommandBus.ts";
-import { ConsoleTransport } from "https://x.nest.land/Houston@1.0.0/mod.ts";
 import { CreateUserCommandHandler } from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommandHandler.ts";
 import { DeleteUseCommandHandler } from "../../../../Contexts/Membership/Users/application/Delete/DeleteUseCommandHandler.ts";
+import SendWelcomeUserEmail from "../../../../Contexts/Retention/Campaign/application/SendWelcomeUserEmail.ts";
+import SendWelcomeUserEmailOnUserRegistered from "../../../../Contexts/Retention/Campaign/application/SendWelcomeUserEmailOnUserRegistered.ts";
+import { EmailSender } from "../../../../Contexts/Retention/Campaign/domain/EmailSender.ts";
+import FakeEmailSender from "../../../../Contexts/Retention/Campaign/infrastructure/FakeEmailSender.ts";
+import { CommandBus } from "../../../../Contexts/Shared/domain/CommandBus.ts";
+import { CreateUserCommand } from "../../../../Contexts/Membership/Users/application/Create/CreateUserCommand.ts";
+import { types } from "https://deno.land/std@0.152.0/media_types/mod.ts";
+import { Command } from "../../../../Contexts/Shared/domain/Command.ts";
+import { UserPutController } from "../controllers/UserPutController.ts";
+import { RabbitMqConfigFactory } from "../../../../Contexts/Membership/Shared/infrastructure/eventBus/RabbitMq/RabbitMqConfigFactory.ts";
+import RabbitMqEventBus from "../../../../Contexts/Shared/infrastructure/EventBus/RabbitMq/RabbitMqEventBus.ts";
 
 const container = new ServiceCollection();
 container.addTransientDynamic(
   Types.MongoConfig,
   MongoConfigFactory.createConfig,
 );
+
+container.addTransientDynamic(Types.rabbitConfig, RabbitMqConfigFactory.createConfig);
+
 container.addStatic(Types.Subscribers, []);
 container.addStatic(
   Types.Client,
@@ -36,44 +48,41 @@ container.addStatic(
   ),
 );
 
+
+
 container.addTransient(UserMongoRepository);
-container.addTransient(EventBus, InMemoryAsyncEventBus);
 container.addTransient(UserRepository, UserMongoRepository);
 container.addTransient(Logger, HoustonLogger);
+container.addTransient(EventBus, RabbitMqEventBus);
+
 container.addTransient(UserCreator);
 container.addTransient(UsersFinder);
 container.addTransient(UserRemover);
+container.addTransient(RabbitMqEventBus);
+const eventBus = container.get(EventBus);
+if(container.get(EventBus) instanceof  RabbitMqEventBus){
+  await (eventBus as RabbitMqEventBus).init();
+}
 
-/**********************************BUS**********************************/
+container.addStatic(Types.EventBus,eventBus);
 
-//User
-const container2 = new ServiceCollection();
-const container3 = new ServiceCollection();
+/**********************************CommandQueryBUS**********************************/
 
-container2.addStatic(
-  Types.commandHandler,
-  new CreateUserCommandHandler(container.get(UserCreator)),
-);
-container3.addStatic(
-  Types.commandHandler,
-  new DeleteUseCommandHandler(container.get(UserRemover)),
-);
+//Notification
+container.addStatic(Types.createUserCommandHandler, new CreateUserCommandHandler(container.get(UserCreator)));
+container.addTransient(CreateUserCommandHandler);
+container.addStatic(Types.commandHandlersInformation, new CommandHandlersInformation([container.get(Types.createUserCommandHandler)]));
+container.addTransient(CommandBus,InMemoryCommandBus);
+container.addTransient(InMemoryCommandBus);
+container.addTransient(EmailSender, FakeEmailSender);
+container.addStatic(Types.sendWelcomeUserEmail, new SendWelcomeUserEmail(container.get(EmailSender)));
+container.addStatic(Types.domainEventSubscriber, [new SendWelcomeUserEmailOnUserRegistered(container.get(Types.sendWelcomeUserEmail))]);
 
-container.addStatic(Types.commandHandler, [
-  container2.get(Types.commandHandler),
-  container3.get(Types.commandHandler),
-]);
-console.log(container.get(Types.commandHandler));
 
-//Shared
-container.addStatic(
-  Types.commandHandlersInformation,
-  new CommandHandlersInformation([]),
-);
+//Controllers
 
-container.addStatic(
-  Types.commandBus,
-  new InMemoryCommandBus(container.get(Types.commandHandlersInformation)),
-);
+
+container.addStatic(UserPutController, new UserPutController(container.get(CommandBus)));
+
 
 export default container;

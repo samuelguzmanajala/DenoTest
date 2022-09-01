@@ -5,7 +5,7 @@
     "strict": true,
     "plugins": [
       {
-        "name": "typescript-deno-plugin",
+        "name": "deno-plugin",
         "enable": true,
         "importmap": "import_map.json"
       }

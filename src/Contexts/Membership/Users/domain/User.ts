@@ -3,6 +3,8 @@ import { AggregateRoot } from "../../../Shared/domain/AggregateRoot.ts";
 import { UserId } from "./value-object/UserId.ts";
 import { UserName } from "./value-object/UserName.ts";
 import { UserMail } from "./value-object/UserMail.ts";
+import { UserCreator } from "../application/Create/UserCreator.ts";
+import { UserCreatedDomainEvent } from "./UserCreatedDomainEvent.ts";
 
 export class User extends AggregateRoot {
   readonly id: UserId;
@@ -30,6 +32,14 @@ export class User extends AggregateRoot {
     mail: UserMail,
   ): User {
     const user = new User(id, name, password, mail);
+    
+    user.record(new UserCreatedDomainEvent({
+      id: user.id.value,
+      name: user.name.value,
+      password: user.password.value,
+      mail: user.mail.value
+    })
+    );
     return user;
   }
 

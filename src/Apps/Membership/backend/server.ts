@@ -37,7 +37,6 @@ export class Server {
 
   async listen() {
     this.application.addEventListener("error", (error) => {
-      console.log("error", error);
       this.logger.error(error.message);
     });
     this.application.addEventListener("listen", () => {

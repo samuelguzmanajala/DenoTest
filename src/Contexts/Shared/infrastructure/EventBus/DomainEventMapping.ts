@@ -1,5 +1,5 @@
-import { DomainEvent, DomainEventClass } from "../../domain/DomainEvent.ts";
-import { DomainEventSubscriber } from "../../domain/DomainEventSubscriber.ts";
+import { DomainEventClass, DomainEvent } from "/src/Contexts/Shared/domain/DomainEvent.ts";
+import { DomainEventSubscriber } from "/src/Contexts/Shared/domain/DomainEventSubscriber.ts";
 
 export type Mapping = Map<string, DomainEventClass>;
 

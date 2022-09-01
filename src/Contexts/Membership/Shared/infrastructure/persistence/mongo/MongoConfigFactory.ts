@@ -6,7 +6,7 @@ import { Service } from "di/mod.ts";
 export class MongoConfigFactory {
   static createConfig(): MongoConfig {
     return {
-      url: Config.url.default,
+      url: Config.mongo.url.default,
     };
   }
 }

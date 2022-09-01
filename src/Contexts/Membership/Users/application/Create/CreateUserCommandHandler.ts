@@ -6,10 +6,13 @@ import { UserCreator } from "./UserCreator.ts";
 import { CreateUserCommand } from "./CreateUserCommand.ts";
 import { CommandHandler } from "../../../../Shared/domain/CommandHandler.ts";
 import { Command } from "../../../../Shared/domain/Command.ts";
+import { Types } from "../../../../Shared/domain/types.ts";
+import {Inject, Service} from 'di/mod.ts';
 
+@Service()
 export class CreateUserCommandHandler
   implements CommandHandler<CreateUserCommand> {
-  constructor(private courseCreator: UserCreator) {}
+  constructor(@Inject(UserCreator) private courseCreator: UserCreator) {}
 
   subscribedTo(): Command {
     return CreateUserCommand;

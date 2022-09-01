@@ -14,11 +14,12 @@ export class UserBackendApp {
     return this.server.listen();
   }
   private async registerSubscribers() {
-    const eventBus: EventBus = container.get(EventBus);
+    const eventBus: EventBus = container.get(Types.EventBus);
 
     //TODO: Fix subscriberDefinition
-    const subscriberDefinition = container.get(Types.commandHandler);
+    const subscriberDefinition = container.get(Types.domainEventSubscriber) as Array<DomainEventSubscriber<DomainEvent>>;
     const subscribers: Array<DomainEventSubscriber<DomainEvent>> = [];
+    subscriberDefinition.forEach((domainEventSubscriber) => subscribers.push(domainEventSubscriber));
 
     const domainEventMapping = new DomainEventMapping(subscribers);
 

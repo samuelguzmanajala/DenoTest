@@ -11,6 +11,17 @@
       ],
       "unstable": true
     },
+    "debug": {
+      "cmd": "deno run  src/Apps/Membership/backend/index.ts",
+      "desc": "running Membership backend",
+      "tsconfig": "tsconfig.json",
+      "importMap": "import_map.json",
+      "allow": [
+        "all"
+      ],
+      "watch": false,
+      "unstable": true
+    },
     "tests": {
       "cmd": "deno test"
     },

@@ -1,6 +1,7 @@
 import { DomainEvent, DomainEventClass } from "./DomainEvent.ts";
 
-export interface DomainEventSubscriber<T extends DomainEvent> {
-  subscribedTo(): Array<DomainEventClass>;
-  on(domainEvent: T): Promise<void>;
+
+export abstract class DomainEventSubscriber<T extends DomainEvent> {
+  abstract subscribedTo(): Array<DomainEventClass>;
+  abstract on(domainEvent: T): Promise<void>;
 }

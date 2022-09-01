@@ -8,6 +8,7 @@ import "reflection";
 import { Inject, Service } from "di/mod.ts";
 import { EventBus } from "../../../../Shared/domain/eventBus.ts";
 import { Types } from "../../../../Shared/domain/types.ts";
+import container from "../../../../../Apps/Membership/backend/dependency-injection/Container.ts";
 
 type Params = {
   userId: UserId;
@@ -20,7 +21,7 @@ type Params = {
 export class UserCreator {
   @Inject(UserRepository)
   private repository: UserRepository;
-  @Inject(EventBus)
+  @Inject(Types.EventBus)
   private eventBus: EventBus;
   constructor(repository: UserRepository, eventBus: EventBus) {
     this.repository = repository;

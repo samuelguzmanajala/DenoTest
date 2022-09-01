@@ -1,4 +1,4 @@
-import { augmentConfiguration, gatherJsonConfigs } from "deno_config/mod.ts";
+import { augmentConfiguration} from "deno_config/mod.ts";
 export const Config = {
   mongo: {
     url: {
